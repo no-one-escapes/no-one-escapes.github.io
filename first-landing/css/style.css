@@ -274,7 +274,7 @@ p{
     overflow: hidden;
 }
 
-#polosa {
+#strip {
     width: 2100px;
     position: relative;
     left: 0;
@@ -283,7 +283,7 @@ p{
     display: inline-block;
 }
 
-#polosa::after {
+#strip::after {
     content:"";
     display: block;
     clear: both;
@@ -629,7 +629,7 @@ h2{
     cursor: pointer;
 }
 
-#polosa_two {
+#strip_two {
     width: 2000px;
     height: 85px;
     position: relative;
@@ -638,7 +638,7 @@ h2{
     display: inline-block;
 }
 
-#polosa_two::after {
+#strip_two::after {
     content:"";
     display: block;
     clear: both;
