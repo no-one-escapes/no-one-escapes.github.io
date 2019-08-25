@@ -1,50 +1,50 @@
 
 let left = 0;
-let polosa = document.getElementById('polosa');
+let strip = document.getElementById('strip');
 
 document.querySelector('.left').onclick = leftClick;
 function leftClick() {
 
     if (left == 0) {
-        polosa.style.left = 0 + 'px';
+        strip.style.left = 0 + 'px';
     } else {
         left = left + 260;
-        polosa.style.left = left + 'px';
+        strip.style.left = left + 'px';
     } 
 };
 
 document.querySelector('.right').onclick = rightClick;
 function rightClick() {
     if (left == -780) {
-        polosa.style.left = -780 + 'px';
+        strip.style.left = -780 + 'px';
     } else {
         left = left - 260;
-        polosa.style.left = left + 'px';
+        strip.style.left = left + 'px';
     }
 }
 
 
-let polosaTwo = document.getElementById('polosa_two');; //move second slider
+let stripTwo = document.getElementById('strip_two');; //move second slider
 let right = 0;
 
 document.querySelector('.left_2').onclick = leftClickTwo;
 function leftClickTwo() {
 
     if (right == 0) {
-        polosaTwo.style.right = 0 + 'px';
+        stripTwo.style.right = 0 + 'px';
     } else {
         right = right - 190;
-        polosaTwo.style.right = right + 'px';
+        stripTwo.style.right = right + 'px';
     } 
 };
 
 document.querySelector('.right_2').onclick = rightClickTwo;
 function rightClickTwo() {
     if (right == 570) {
-        polosaTwo.style.right = 570 + 'px';
+        stripTwo.style.right = 570 + 'px';
     } else {
         right = right + 190;
-        polosaTwo.style.right = right + 'px';
+        stripTwo.style.right = right + 'px';
     }
 }
 
@@ -100,31 +100,3 @@ function showTabs(){
 } 
 
 
-// let textForPic = document.querySelectorAll('.after_mouse_enter');
-// let block = document.querySelector('.block');
-
-// textForPic.forEach(function(element){ // add invisibility block
-//     element.onmouseenter = showText;
-// });
-
-// function showText(){
-//     if (this.value == 0) {
-//         for (let j = 0; j < textForPic.length; j++) {
-//             textForPic.innerHTML = "some text";
-//         }
-        
-
-// }
-
-
-// preview.forEach(function(element){
-//     element.onmouseleave = closeShow;
-// });
-
-// function closeShow(){
-//     if (this.classList) {
-//         for (let j = 0; j < preview.length; j++) {
-//             preview[j].classList.remove('block');
-//         }
-//     }
-// }
