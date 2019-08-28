@@ -82,13 +82,6 @@ li {
     margin-right: 25px;
 }
 
-/* PLACE FOR ADAPTATION HEADER!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 .section-one__image{
     background-image: url('../img/top_bg.jpg');
     min-height: 750px;
@@ -97,10 +90,6 @@ li {
     background-position: center center;
     margin: 0 auto;
 }
-
-/* .first-section__inner-content{
-    
-} */
 
 .section-one__slider{
     margin-top: -500px;
@@ -177,14 +166,6 @@ button:hover{
     background-position: center center;
 }
 
-
-/* PLACE FOR ADAPTATION SECTION ONE!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 .section-two{
     min-height: 495px;
     background-color: #f7f7f7;
@@ -248,15 +229,6 @@ button:hover{
     display: none;
 }
 
-
-
-/* PLACE FOR ADAPTATION SECTION TWO!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 .section-three{
     background-color: #000;
     min-height: 417px;
@@ -315,15 +287,6 @@ button:hover{
     text-align: center;
     margin-top: 10px;
 }
-
-
-/* PLACE FOR ADAPTATION SECTION THREE!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 
 .section-four{
     min-height: 950px;
@@ -401,31 +364,6 @@ button:hover{
 .button__align-center{
     margin-left: 41%;
 }
-
-/* .photo__preview .after_mouse_enter {
-    position: absolute;
-    width: 255px;
-    height: 165px;
-
-}
-.photo__preview:hover .after_mouse_enter {
-    color: #ffffff;
-    display: block; 
-    background: rgba(0, 0, 0, 0.5);
-    -webkit-transition: ease 1s;
-    -moz-transition: ease 1s;
-    -o-transition: ease 1s;
-    transition: ease 1s;
-    cursor: pointer;
-} 
-*/
-
-
-/* PLACE FOR ADAPTATION SECTION FOUR!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
 
 .section-five{
     min-height: 700px;
@@ -535,13 +473,6 @@ button:hover{
     padding-top: 10px;
 }
 
-
-/* PLACE FOR ADAPTATION SECTION FIVE!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
 .section-six{
     min-height: 667px;
     background-color: #f7f7f7;
@@ -595,12 +526,6 @@ p{
     margin: 60px auto 30px;
 }
 
-/* PLACE FOR ADAPTATION SECTION SIX!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
 .section-seven{
     min-height: 110px;
     background-color: #fff;
@@ -612,13 +537,6 @@ p{
     margin: 60px auto 75px;
     padding-left: 40px;
 }
-
-
-/* PLACE FOR ADAPTATION SECTION SEVEN!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
 
 .section-eight{
     min-height: 550px;
@@ -680,14 +598,6 @@ p{
     margin-bottom: -13px;
 }
 
-
-/* PLACE FOR ADAPTATION SECTION EIGHT!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 .section-nine{
     min-height: 750px;
     background-color: #fff;
@@ -741,13 +651,6 @@ hr{
     margin-left: 41%;
 }
 
-/* PLACE FOR ADAPTATION SECTION NINE!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 .section-ten{
     min-height: 414px;
     background-color: #000;
@@ -795,16 +698,6 @@ hr{
     line-height: 21px;
     margin-top: 20px;
 }
-
-
-
-/* PLACE FOR ADAPTATION SECTION TEN!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 
 .section-eleven{
     min-height: 76px;
@@ -882,15 +775,6 @@ hr{
     background-color: #e74237;
 }
 
-
-/* PLACE FOR ADAPTATION SECTION ELEVEN!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
-
 .section-twelve{
     min-height: 600px;
     background-color: #f7f7f7;
@@ -932,14 +816,6 @@ form{
     height: 40px;
     resize: none;
 }
-
-
-/* PLACE FOR ADAPTATION SECTION TWELVE!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
 
 .section-thirteen{
     
@@ -995,13 +871,6 @@ form{
     display: flex;
     margin-left: 20px;
 }
-
-/* PLACE FOR ADAPTATION SECTION THIRTEEN!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
 
 footer{
     min-height: 260px;
