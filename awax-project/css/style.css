@@ -18,7 +18,7 @@
 }
 
 .header__logo-img{
-    background-image: url('../images/logo_img.png');
+    background-image: url('../img/logo_img.png');
     height: 51px;
     width: 50px;
 }
@@ -90,7 +90,7 @@ li {
 
 
 .section-one__image{
-    background-image: url('../images/top_bg.jpg');
+    background-image: url('../img/top_bg.jpg');
     min-height: 750px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -160,7 +160,7 @@ button:hover{
     height: 65px;
     background-color: #b88b58;
     border-radius: 50%;
-    background-image: url('../images/telephone.svg');
+    background-image: url('../img/telephone.svg');
     background-repeat: no-repeat;
     background-position: center center;
     padding: 0 0;
@@ -172,7 +172,7 @@ button:hover{
 }
 
 .call-button:hover{
-    background-image: url('../images/telephone.svg');
+    background-image: url('../img/telephone.svg');
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -232,7 +232,7 @@ button:hover{
 }
 
 .section-two__video-preview{
-    background-image: url('../images/video.jpg');
+    background-image: url('../img/video.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     height: 275px;
@@ -279,7 +279,7 @@ button:hover{
 }
 
 .line{
-    background-image: url('../images/line.svg');
+    background-image: url('../img/line.svg');
     height: 209px;
     width: 3px;
     background-repeat: no-repeat;
@@ -342,7 +342,7 @@ button:hover{
 .line-two{
     width: 1px;
     height: 17px;
-    background-image: url('..//images/line-two.svg');
+    background-image: url('..//img/line-two.svg');
     background-repeat: no-repeat;
 }
 
@@ -436,7 +436,7 @@ button:hover{
 }
 
 .section-five__bg-image{
-    background-image: url('../images/team-bg.jpg');
+    background-image: url('../img/team-bg.jpg');
     min-height: 700px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -946,7 +946,7 @@ form{
 }
 
 .section-thirteen__image{
-    background-image: url('../images/map.jpg');
+    background-image: url('../img/map.jpg');
     min-height: 416px;
     background-repeat: no-repeat;
     background-size: cover;
