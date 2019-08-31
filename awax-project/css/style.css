@@ -646,12 +646,6 @@ p{
     margin: 60px auto 30px;
 }
 
-/* PLACE FOR ADAPTATION SECTION SIX!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
 .section-seven{
     min-height: 110px;
     background-color: #fff;
@@ -662,14 +656,8 @@ p{
     justify-content: space-between;
     margin: 60px auto 75px;
     padding-left: 40px;
+    max-width: 950px;
 }
-
-
-/* PLACE FOR ADAPTATION SECTION SEVEN!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
 
 .section-eight{
     min-height: 550px;
@@ -731,14 +719,6 @@ p{
     margin-bottom: -13px;
 }
 
-
-/* PLACE FOR ADAPTATION SECTION EIGHT!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 .section-nine{
     min-height: 750px;
     background-color: #fff;
@@ -792,13 +772,6 @@ div.btn__container:nth-child(3){
     margin-top: 50px;
 }
 
-/* PLACE FOR ADAPTATION SECTION NINE!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 .section-ten{
     min-height: 414px;
     background-color: #000;
@@ -846,16 +819,6 @@ div.btn__container:nth-child(3){
     line-height: 21px;
     margin-top: 20px;
 }
-
-
-
-/* PLACE FOR ADAPTATION SECTION TEN!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 
 .section-eleven{
     min-height: 76px;
@@ -932,15 +895,6 @@ div.btn__container:nth-child(3){
 .red-pinterest{
     background-color: #e74237;
 }
-
-
-/* PLACE FOR ADAPTATION SECTION ELEVEN!!!!!
-!!!!!
-!!!!!!
-!!!!!!!!!
-!!!!!!!!!!! */
-
-
 
 .section-twelve{
     min-height: 600px;
@@ -1041,9 +995,6 @@ form{
     display: flex;
     margin-left: 20px;
 }
-
-
-
 
 footer{
     min-height: 260px;
@@ -1182,16 +1133,21 @@ li{
     .line{
         display: none;
     }
+    .container-advantages {
+        text-align: center;
+    }
     .section-three__advantages{
         display: inline-block;
         width: 890px;
-        margin-left: 52px;
+        margin-left: 0;
+        text-align: center;
     }
     .advantages__item {
         width: 350px;
         height: 220px;
         display: inline-block;
-        margin-left: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
     }
     div.advantages__item:nth-child(10){
         display: none;
@@ -1316,7 +1272,7 @@ li{
         margin-left: 0;
     }
     .advantages__item {
-        margin-left: 14px;
+        width: 330px;
     }
     .section-four {
         min-height: 980px;
@@ -1428,10 +1384,113 @@ li{
     .advantages__item {
         width: 220px;
     }
+    .section-four {
+        min-height: 880px;
+    }
+    .photo__preview {
+        width: 163px;
+        height: 102px;
+    }
+    .photo__title {
+        font-size: 11px;
+        line-height: 11px;
+    }
+    .photo__cover-text {
+        font-size: 8px;
+        margin-top: 55px;
+        line-height: 13px;
+        width: 120px;
+        height: 35px;
+    }
+    .section-four__tabs {
+        min-width: 587px;
+        padding: 0 0;
+    }
+    .tabs__list {
+        width: 550px;
+    }
+    .container .section-four__tabs{
+        text-align: left;
+    }
+    .section-five__team > div:nth-child(1) {
+        width: 360px;
+    }
+    .section-six {
+        min-height: 700px;
+    }
+    .clients-card__review > p {
+        width: 390px;
+    }
+    .clients-card__photo {
+        margin: 35px auto 30px;
+    }
+    .pricing-list__card {
+        margin: 10px 10px;
+    }
+    .features__description {
+        margin-left: 60px;
+    }
+    .description-block {
+        width: 500px;
+    }
+    .fact-list {
+        display: inline-block;
+        width: 550px;
+    }
+    .fact-list__inner {
+        display: inline-block;
+    }
+    .fact-list__inner {
+        width: 250px;
+        height: 225px;
+    }
+    .fact__text{
+        width: 190px;
+        margin: 20px auto;
+    }
+    .social-media__text {
+        display: none;
+    }
+    .social-media__icons {
+        margin: -57px 120px;
+    }
+    .contact-list {
+        width: 500px;
+    }
+    .contact {
+        width: 500px;
+        margin: 3px 30px -412px 66px;
+    }
 
 }
 
 @media (max-width: 599px) {
+    .section-one__inner-text {
+        font-size: 38px;
+        line-height: 38px;
+    }
+    .section-one__slider > ul:nth-child(2){
+        margin: 0 0 225px;
+    }
+    .section-one__image {
+        min-height: 600px;
+    }
+    .section-two {
+        margin-top: -153px;
+    }
+    .call-button{
+        top: 537px;
+        right: 43px;
+    }
+    .section-two {
+        min-height: 830px;
+    }
+    .section-two__video-preview {
+        margin: 0 auto;
+    }
+    .section-two__item-text p {
+        max-width: 380px;
+    }
 
 }
 @media (max-width: 480px) {
