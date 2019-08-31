@@ -37,6 +37,23 @@ $(document).ready(function () {
         arrows: false
     });
 
+    $('.client-logos').slick({
+        slidesToShow: 5,
+        dots:false,
+        arrows:false,
+        autoplay: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true
+            }
+          }
+        ]
+      });
+
 });
 
 
