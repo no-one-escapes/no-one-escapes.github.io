@@ -1650,6 +1650,15 @@ li{
         margin-top: 85px;
         width: 170px;
     }
+    .section-three {
+        min-height: 1200px;
+    }
+    .advantages__item {
+        margin-top: 30px;
+    }
+    .section-three__advantages {
+        margin: 0 auto;
+    }
     .section-four {
         min-height: 2825px;
     }
