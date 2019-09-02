@@ -201,7 +201,7 @@ button:hover{
     height: 65px;
     background-color: #b88b58;
     border-radius: 50%;
-    background-image: url('../img/telephone.svg');
+    background-image: url('../img/telephone.png');
     background-repeat: no-repeat;
     background-position: center center;
     padding: 0 0;
@@ -214,7 +214,7 @@ button:hover{
 }
 
 .call-button:hover{
-    background-image: url('../img/telephone.svg');
+    background-image: url('../img/telephone.png');
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -303,7 +303,7 @@ button:hover{
 }
 
 .line{
-    background-image: url('../img/line.svg');
+    background-image: url('../img/line.png');
     height: 209px;
     width: 3px;
     background-repeat: no-repeat;
@@ -357,7 +357,7 @@ button:hover{
 .line-two{
     width: 1px;
     height: 17px;
-    background-image: url('..//img/line-two.svg');
+    background-image: url('..//img/line-two.png');
     background-repeat: no-repeat;
 }
 
