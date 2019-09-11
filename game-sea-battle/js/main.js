@@ -15,6 +15,16 @@ let shipX = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 42
 let shipY = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450];
 let shipWidth = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 570, 600];
 let shipHeight = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 570, 600];
+let mouse = {
+    x : 0,
+    y : 0,
+    down : false
+};
+let selected = false;
+// let isCursorInRect = function (){
+//     return mouse.x > shipX && mouse.x < shipX + shipWidth && mouse.y > shipY && mouse.y < shipY + shipHeight;
+// }
+
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -102,6 +112,8 @@ function drawObjects(){
     ctx.strokeStyle = "black";
     ctx.closePath();
     ctx.stroke();
+
+    selected = false;
 }
 
 function drawContur(){
@@ -183,9 +195,34 @@ function draw(){
         heroY -= 2;
     }
 
+    if (ctx.rect.mouseenter = mouse.x > shipX && mouse.x < shipX + shipWidth && mouse.y > shipY && mouse.y < shipY + shipHeight){
+        // ctx.strokeStyle = "#fcb4d5";
+       console.log('work');
+    }
+
+
+    if(selected) {
+        ctx.strokeStyle = "#fcb4d5";
+    }
+
     
 
     requestAnimationFrame(draw);
 }
+
+window.onmousemove = function (e) {
+    mouse.x = e.offsetX;
+    mouse.y = e.offsetY;
+    // console.log(mouse.x, mouse.y)
+}
+
+window.onmousedown = function() {
+    mouse.down = true;
+}
+
+window.onmouseup = function(){
+    mouse.down = false;
+}
+
 
 draw();
