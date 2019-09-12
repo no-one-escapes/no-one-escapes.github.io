@@ -1,119 +1,152 @@
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
+// let shipCanvas = document.getElementById('shipsCanvas');
+// let ctxTwo = shipCanvas.getContext('2d');
+
 let canW = canvas.width = 1280;
 let canH = canvas.height = 480;
-let heroWidth = 30;
-let heroHeight = 30;
-let heroX = 480;
-let heroY = 450;
-let rightPressed = false;
-let leftPressed = false;
-let topPressed = false;
-let botPressed = false;
 let shipX = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 
     570, 600, 630, 660, 690, 720, 750, 780, 810, 840, 870, 900, 930, 960, 990, 1020, 1050, 1080];
 let shipY = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450];
 let shipWidth = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 570, 600];
 let shipHeight = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 570, 600];
-let mouse = {
-    x : 0,
-    y : 0,
-    down : false
-};
+let box = [];
 let selected = false;
-// let isCursorInRect = function (){
-//     return mouse.x > shipX && mouse.x < shipX + shipWidth && mouse.y > shipY && mouse.y < shipY + shipHeight;
-// }
+let startX;
+let startY;
+let offsetX = 60;
+let offsetY = 60;
 
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-
-function keyDownHandler(e) {
-    if (e.keyCode == 68) {
-        rightPressed = true;
-    } else if (e.keyCode == 65) {
-        leftPressed = true;
-    } else if (e.keyCode == 83) {
-        topPressed = true;
-    } else if (e.keyCode == 87) {
-        botPressed = true;
-    }
-}
-function keyUpHandler(e) {
-    if (e.keyCode == 68) {
-        rightPressed = false;
-    } else if (e.keyCode == 65) {
-        leftPressed = false;
-    } else if (e.keyCode == 83) {
-        topPressed = false;
-    } else if (e.keyCode == 87) {
-        botPressed = false;
-    }
-}
-
-function drawRect() {
-    ctx.beginPath();
-    ctx.rect(heroX, heroY, heroWidth, heroHeight);
-    ctx.fillStyle = "green";
-    ctx.fill();
-    ctx.closePath();
-}
+function main() {
 
 
-
-function drawOne(){
-    ctx.beginPath(); // 1
-    ctx.rect(shipX[4], shipY[10], shipWidth[1], shipHeight[1]);
-    ctx.fillStyle = "white";
-    ctx.fill();
-    ctx.strokeStyle = "black";
-    ctx.closePath();
-    ctx.stroke();
-}
 
 function drawObjects(){
+
+    box.push({ //1
+        x: shipX[4],
+        y: shipY[10],
+        width: shipWidth[1],
+        height: shipHeight[1],
+        z : 0,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
+
+    box.push({ //1
+        x: shipX[4],
+        y: shipY[10],
+        width: shipWidth[1],
+        height: shipHeight[1],
+        z : 0,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
+
+    box.push({ //1
+        x: shipX[4],
+        y: shipY[10],
+        width: shipWidth[1],
+        height: shipHeight[1],
+        z : 0,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
+
+    box.push({ //1
+        x: shipX[4],
+        y: shipY[10],
+        width: shipWidth[1],
+        height: shipHeight[1],
+        z : 0,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
+
+    box.push({ //4
+        x: shipX[4],
+        y: shipY[4],
+        width: shipWidth[4],
+        height: shipHeight[1],
+        z : 1,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
    
-    ctx.beginPath(); // 4
-    ctx.rect(shipX[4], shipY[4], shipWidth[4], shipHeight[1]);
-    ctx.fillStyle = "white";
-    ctx.fill();
-    ctx.strokeStyle = "black";
-    ctx.closePath();
-    ctx.stroke();
+    
 
-    ctx.beginPath(); // 3
-    ctx.rect(shipX[4], shipY[6], shipWidth[3], shipHeight[1]);
-    ctx.fillStyle = "white";
-    ctx.fill();
-    ctx.strokeStyle = "black";
-    ctx.closePath();
-    ctx.stroke();
+    box.push({ //3
+        x: shipX[4],
+        y: shipY[6],
+        width: shipWidth[3],
+        height: shipHeight[1],
+        z : 2,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
 
-    ctx.beginPath(); // 2
-    ctx.rect(shipX[4], shipY[8], shipWidth[2], shipHeight[1]);
-    ctx.fillStyle = "white";
-    ctx.fill();
-    ctx.strokeStyle = "black";
-    ctx.closePath();
-    ctx.stroke();
+    box.push({ //3
+        x: shipX[4],
+        y: shipY[6],
+        width: shipWidth[3],
+        height: shipHeight[1],
+        z : 2,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
 
-    ctx.beginPath(); // first field
-    ctx.rect(shipX[12], shipY[3], shipWidth[10], shipHeight[10]);
-    ctx.fillStyle = "transparent";
-    ctx.fill();
-    ctx.closePath();
-    ctx.stroke();
+   
 
-    ctx.beginPath(); // second field
-    ctx.rect(shipX[27], shipY[3], shipWidth[10], shipHeight[10]);
-    ctx.fillStyle = "transparent";
-    ctx.fill();
-    ctx.strokeStyle = "black";
-    ctx.closePath();
-    ctx.stroke();
+    box.push({ //2
+        x: shipX[4],
+        y: shipY[8],
+        width: shipWidth[2],
+        height: shipHeight[1],
+        z : 3,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
+    box.push({ //2
+        x: shipX[4],
+        y: shipY[8],
+        width: shipWidth[2],
+        height: shipHeight[1],
+        z : 3,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
+    box.push({ //2
+        x: shipX[4],
+        y: shipY[8],
+        width: shipWidth[2],
+        height: shipHeight[1],
+        z : 3,
+        fill: "#ff8c00",
+        stroke : "black",
+        isDragging: false,
+    });
 
-    selected = false;
+    
+
+    
+
+    draw();
+
+    canvas.onmousedown = myDown;
+    canvas.onmouseup = myUp;
+    canvas.onmousemove = myMove;
+    
+    
 }
 
 function drawContur(){
@@ -153,6 +186,21 @@ function drawContur(){
         ctx.stroke(); 
     }
 
+    ctx.beginPath(); // first field
+    ctx.rect(shipX[12], shipY[3], shipWidth[10], shipHeight[10]);
+    ctx.fillStyle = "transparent";
+    ctx.fill();
+    ctx.strokeStyle = "black";
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.beginPath(); // second field
+    ctx.rect(shipX[27], shipY[3], shipWidth[10], shipHeight[10]);
+    ctx.fillStyle = "transparent";
+    ctx.fill();
+    ctx.strokeStyle = "black";
+    ctx.closePath();
+    ctx.stroke();
 
 }
 
@@ -171,58 +219,99 @@ function drawBackground(){
     ctx.closePath();
 }
 
-
-function draw(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     
-    drawRect();
-    drawBackground()
+function myMove(e) {
+        if (selected) {
+            let mx = parseInt(e.clientX - offsetX);
+            let my = parseInt(e.clientY - offsetY);
+
+            let dx = mx - startX;
+            let dy = my - startY;
+
+            for (let i = 0; i < box.length; i++) {
+                if (box[i].isDragging == true) {
+                    box[i].x += dx;
+                    box[i].y += dy;
+                }
+            }
+            draw();
+            startX = mx;
+            startY = my;
+        }
+    }
+
+    function myUp(e) {
+        selected = false;
+        for (let i = 0; i < box.length; i++) {
+            box[i].isDragging = false;
+        }
+    }
+
+    function myDown(e) {
+
+        let mx = parseInt(e.clientX - offsetX);
+        let my = parseInt(e.clientY - offsetY);
+
+        selected = true;
+        let group = [];
+        for (let i = 0; i < box.length; i++) {
+
+            if (mx > box[i].x && mx < box[i].x + box[i].width && my > box[i].y && my < box[i].y + box[i].height) {
+                group.push(box[i]);
+            }
+        }
+        
+        if (group.length === 1)
+        {
+            group[0].isDragging = true;
+        }
+        else if (group.length >= 2)
+        {
+            let maxZ = group[0].z;
+            let b = group[0];
+            
+            for (let i = 1; i < group.length; i++)
+            {
+                if (maxZ < group[i].z)
+                {
+                    maxZ = group[i].z;
+                    b = group[i];
+                }
+            }
+            b.isDragging = true;
+        }
+
+        startX = mx;
+        startY = my;
+    }
+
+    function rect(r) {
+        ctx.fillStyle = r.fill;
+        ctx.fillRect(r.x, r.y, r.width, r.height);
+        ctx.strokeStyle = r.stroke;
+        // ctx.stroke();
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < box.length; i++) {
+            rect(box[i]);
+        }
+        
+
+
+    drawBackground();
     drawContur();
-    drawObjects();
-    drawOne()
-
-    
-    
-    
-    if (rightPressed && heroX < 1250) {
-        heroX += 2;
-    } else if (leftPressed && heroX > 0) {
-        heroX -= 2;
-    } else if (topPressed && heroY < 450) {
-        heroY += 2;
-    } else if (botPressed && heroY > 0) {
-        heroY -= 2;
-    }
-
-    if (ctx.rect.mouseenter = mouse.x > shipX && mouse.x < shipX + shipWidth && mouse.y > shipY && mouse.y < shipY + shipHeight){
-        // ctx.strokeStyle = "#fcb4d5";
-       console.log('work');
-    }
-
-
-    if(selected) {
-        ctx.strokeStyle = "#fcb4d5";
-    }
-
-    
 
     requestAnimationFrame(draw);
-}
 
-window.onmousemove = function (e) {
-    mouse.x = e.offsetX;
-    mouse.y = e.offsetY;
-    // console.log(mouse.x, mouse.y)
 }
+drawObjects();
 
-window.onmousedown = function() {
-    mouse.down = true;
-}
 
-window.onmouseup = function(){
-    mouse.down = false;
+requestAnimationFrame(draw);
 }
 
 
-draw();
+
+main();
