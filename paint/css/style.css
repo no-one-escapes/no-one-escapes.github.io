@@ -5,6 +5,13 @@
 canvas {
     border: 3px dotted black;
     text-align: center;
-    margin: 100px auto;
+    margin: 50px auto;
     display: block;
+}
+
+div{
+    display: grid;
+}
+input{
+    margin: 50px auto;
 }
