@@ -1,7 +1,7 @@
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 let userColor = "black";
-let userWidthBrush = 10;
+let userWidthBrush = 26;
 
 document.getElementById('color').onchange = function(e){
     userColor = this.value;
