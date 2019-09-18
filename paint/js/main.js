@@ -2,6 +2,7 @@ let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 let userColor = "black";
 let userWidthBrush = 26;
+let painting = false;
 
 document.getElementById('color').onchange = function(e){
     userColor = this.value;
@@ -11,13 +12,11 @@ document.getElementById('range').onchange = function(e){
     userWidthBrush = this.value;
 }
 
-
-let painting = false;
-
 function startDrawing(){
     painting = true;
 }
-function finishedDrawing(){
+
+function stopDrawing(){
     painting = false;
     ctx.beginPath();
 }
@@ -32,10 +31,13 @@ function draw(e){
     ctx.beginPath();
     ctx.moveTo(e.offsetX, e.offsetY);
     ctx.strokeStyle = userColor;
-    
-    
 }
 
 canvas.addEventListener("mousedown", startDrawing);
-canvas.addEventListener("mouseup", finishedDrawing);
+canvas.addEventListener("mouseup", stopDrawing);
+canvas.addEventListener("mouseleave", stopDrawing);
 canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("touchstart", startDrawing);
+canvas.addEventListener("touchend", stopDrawing);
+canvas.addEventListener("touchcancel", stopDrawing);
+canvas.addEventListener("touchmove", draw);
