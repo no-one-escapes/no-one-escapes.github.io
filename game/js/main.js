@@ -612,8 +612,8 @@ field[99] = {
 
 function main(){
 
-    let numArray = 0;
-    let move = 0;
+    let numArray = 0; //index array
+    let move = 0; // steps for player 1
     let arcCoorX = field[numArray+move].x+60;
     let arcCoorY = field[numArray+move].y+45;
     
@@ -643,15 +643,63 @@ function main(){
         document.querySelector('.forward').onclick = forwardMove;
         document.querySelector('.back').onclick = backMove;
         document.querySelector('.numOneValue').onclick = stepForward;
+        document.querySelector('.dices').onclick = dices;
+
+
+        let dicesSum;
+
+        function dices(){
+
+            let diceOne, diceTwo;
+
+            diceOne = Math.ceil(Math.random()*6);
+            diceTwo = Math.ceil(Math.random()*6);
+
+            document.getElementById('diceOne').innerHTML = diceOne;
+            document.getElementById('diceTwo').innerHTML = diceTwo;
+
+            dicesSum = diceOne+diceTwo;
+            stepForwardTwo();
+
+        }
+
+
+        function stepForwardTwo(){
+            for (let i = 0; i < dicesSum; i++){
+                (function (i) {
+                    setTimeout(function () {
+                    move += 1;
+                    arcCoorX = field[numArray+move].x+60;
+                    arcCoorY = field[numArray+move].y+45;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    draw();
+                    player();
+                },700 * i + 1);
+            }) (i);
+        }
+
+        return move;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
         let userNum;
 
-
-
         function stepForward(){ // move with input's value
+        
             userNum = document.querySelector('.numOne').value;
             console.log(userNum);
             
-            for(let i = 0; i < userNum; i++){
+            for (let i = 0; i < userNum; i++){
                 (function (i) {
                     setTimeout(function () {
                     move += 1;
@@ -670,7 +718,7 @@ function main(){
 
 
     
-        function forwardMove(){
+        function forwardMove(){ //move forward with button
             move += 1;
             arcCoorX = field[numArray+move].x+60;
             arcCoorY = field[numArray+move].y+45;
@@ -684,7 +732,7 @@ function main(){
 
         }
     
-        function backMove(){
+        function backMove(){ //move back with button
             move -= 1;
             arcCoorX = field[numArray+move].x+60;
             arcCoorY = field[numArray+move].y+45;
