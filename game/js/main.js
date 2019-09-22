@@ -11,7 +11,7 @@ field[0] = {
     x : 0, 
     y : 810, 
     fill: "#7fb5b5",
-    strokeText: "1"
+    strokeText: "START"
 }
 field[1] = {
     x : 125, 
@@ -605,7 +605,7 @@ field[99] = {
     x : 0, 
     y : 0, 
     fill: "#5f9ea0",
-    strokeText : "100"
+    strokeText : "FINISH"
 }
 
 
@@ -617,12 +617,18 @@ function main(){
     let arcCoorX = field[numArray+move].x+60;
     let arcCoorY = field[numArray+move].y+45;
     
+    
     function rect(r) { // settings for cells
+        ctx.beginPath();
         ctx.fillStyle = r.fill;
         ctx.fillRect(r.x, r.y, cellWidth, cellHeight)
         ctx.strokeStyle = "#fff";
-        ctx.strokeText(r.strokeText, r.x+100, r.y+20);
+        // ctx.strokeText(r.strokeText, r.x+100, r.y+20);
+        ctx.strokeText(r.strokeText, r.x+12, r.y+20);
+        ctx.closePath();
     }
+
+    
 
     function draw() { // draw field
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -633,7 +639,19 @@ function main(){
         function player(){
             ctx.beginPath();
             ctx.arc(arcCoorX, arcCoorY, 15, 0, 2*Math.PI);
-            ctx.stroke();
+            ctx.fillStyle = "white";
+            ctx.fill();
+            // ctx.strokeStyle = "black"
+            // ctx.strokeText("1", 5, 5);
+            // // ctx.stroke();
+            // // ctx.strokeStyle = 'black';
+            // // context.font = 'bold 130pt Calibri';
+            // ctx.textAlign = 'center';
+            // ctx.textBaseline = 'middle';
+            // ctx.fillStyle = 'black';
+            // ctx.fillText('1', arcCoorX, arcCoorY);
+            // // ctx.stroke();
+            // ctx.closePath();
             console.log(arcCoorX);
             console.log(move);
             
@@ -746,8 +764,21 @@ function main(){
             
         }
 
-        // if(move == 57){ // condition for steps back
-        //     move = 57 - 15;
+        if (move == 61){ // condition for steps back
+            move = 61 - 40;
+            arcCoorX = field[numArray+move].x+60;
+            arcCoorY = field[numArray+move].y+45;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            draw();
+            player();
+            
+            return move;
+
+        }
+
+        // if (move == 97){ // condition for steps back
+        //     move = 97 - 19;
         //     arcCoorX = field[numArray+move].x+60;
         //     arcCoorY = field[numArray+move].y+45;
             
@@ -758,6 +789,469 @@ function main(){
         //     return move;
 
         // }
+
+        function snakes(){
+            
+
+            // snake 62-22
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 315); // first point
+            ctx.lineTo(190, 275); // second point
+            ctx.lineTo(150, 315); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 315); // first point
+            ctx.lineTo(230, 315); // second point
+            ctx.lineTo(190, 275); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 315); // first point
+            ctx.lineTo(190, 355); // second point
+            ctx.lineTo(230, 315); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 355); // first point
+            ctx.lineTo(190, 315); // second point
+            ctx.lineTo(150, 355); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 355); // first point
+            ctx.lineTo(190, 395); // second point
+            ctx.lineTo(150, 355); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 395); // first point
+            ctx.lineTo(230, 395); // second point
+            ctx.lineTo(190, 355); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 395); // first point
+            ctx.lineTo(190, 435); // second point
+            ctx.lineTo(230, 395); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 435); // first point
+            ctx.lineTo(150, 435); // second point
+            ctx.lineTo(190, 395); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 435); // first point
+            ctx.lineTo(190, 475); // second point
+            ctx.lineTo(150, 435); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 475); // first point
+            ctx.lineTo(230, 475); // second point
+            ctx.lineTo(190, 435); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 475); // first point
+            ctx.lineTo(190, 515); // second point
+            ctx.lineTo(230, 475); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 515); // first point
+            ctx.lineTo(150, 515); // second point
+            ctx.lineTo(190, 475); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 515); // first point
+            ctx.lineTo(190, 555); // second point
+            ctx.lineTo(150, 515); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 555); // first point
+            ctx.lineTo(230, 555); // second point
+            ctx.lineTo(190, 515); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 555); // first point
+            ctx.lineTo(190, 595); // second point
+            ctx.lineTo(230, 555); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 595); // first point
+            ctx.lineTo(150, 595); // second point
+            ctx.lineTo(190, 555); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 595); // first point
+            ctx.lineTo(190, 635); // second point
+            ctx.lineTo(150, 595); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 635); // first point
+            ctx.lineTo(230, 635); // second point
+            ctx.lineTo(190, 595); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 635); // first point
+            ctx.lineTo(190, 675); // second point
+            ctx.lineTo(230, 635); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 675); // first point
+            ctx.lineTo(150, 675); // second point
+            ctx.lineTo(190, 635); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(190, 675); // first point
+            ctx.lineTo(190, 715); // second point
+            ctx.lineTo(150, 675); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(190, 675); // first point
+            ctx.lineTo(230, 675); // second point
+            ctx.lineTo(190, 715); // third point
+            ctx.fill();
+
+
+
+
+            // snake 98-79
+
+
+            // ctx.beginPath();
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(305, 40); // first point
+            // ctx.lineTo(265, 40); // second point
+            // ctx.lineTo(305, 80); // third point
+            // ctx.fill();
+
+            // ctx.beginPath();
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(285, 60); // first point
+            // ctx.lineTo(265, 80); // second point
+            // ctx.lineTo(265, 40); // third point
+            // ctx.fill();
+
+            // ctx.beginPath();
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(265, 80); // first point
+            // ctx.lineTo(285, 100); // second point
+            // ctx.lineTo(285, 60); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(265, 80); // first point
+            // ctx.lineTo(245, 100); // second point
+            // ctx.lineTo(285, 100); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 2
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(245, 100); // first point
+            // ctx.lineTo(225, 80); // second point
+            // ctx.lineTo(265, 80); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 3
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(245, 100); // first point
+            // ctx.lineTo(225, 120); // second point
+            // ctx.lineTo(225, 80); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 4
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(225, 120); // first point
+            // ctx.lineTo(245, 140); // second point
+            // ctx.lineTo(245, 100); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 5
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(225, 120); // first point
+            // ctx.lineTo(205, 140); // second point
+            // ctx.lineTo(245, 140); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 6
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(205, 140); // first point
+            // ctx.lineTo(185, 120); // second point
+            // ctx.lineTo(245, 120); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 7
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(205, 140); // first point
+            // ctx.lineTo(185, 160); // second point
+            // ctx.lineTo(185, 120); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 8
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(185, 160); // first point
+            // ctx.lineTo(205, 180); // second point
+            // ctx.lineTo(205, 140); // third point
+            // ctx.fill();
+
+            // // ctx.beginPath(); //train 9
+            // // ctx.fillStyle = '#A62A87';
+            // // // ctx.fillStyle = 'white';
+            // // ctx.moveTo(555, 160); // first point
+            // // ctx.lineTo(575, 180); // second point
+            // // ctx.lineTo(535, 180); // third point
+            // // ctx.fill();
+
+            // ctx.beginPath(); //train 9
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(205, 180); // first point
+            // ctx.lineTo(185, 200); // second point
+            // ctx.lineTo(185, 160); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 10
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(205, 180); // first point
+            // ctx.lineTo(225, 200); // second point
+            // ctx.lineTo(185, 200); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 11
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(225, 200); // first point
+            // ctx.lineTo(245, 180); // second point
+            // ctx.lineTo(205, 180); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 12
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(225, 200); // first point
+            // ctx.lineTo(245, 220); // second point
+            // ctx.lineTo(245, 180); // third point
+            // ctx.fill();
+
+            // ctx.beginPath(); //train 13
+            // ctx.fillStyle = '#A62A87';
+            // // ctx.fillStyle = 'white';
+            // ctx.moveTo(245, 220); // first point
+            // ctx.lineTo(225, 240); // second point
+            // ctx.lineTo(225, 180); // third point
+            // ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(320, 35); // first point
+            ctx.lineTo(300, 55); // second point
+            ctx.lineTo(340, 55); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(300, 55); // first point
+            ctx.lineTo(280, 35); // second point
+            ctx.lineTo(320, 35); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(300, 55); // first point
+            ctx.lineTo(280, 35); // second point
+            ctx.lineTo(280, 75); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(280, 75); // first point
+            ctx.lineTo(300, 55); // second point
+            ctx.lineTo(300, 95); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(280, 75); // first point
+            ctx.lineTo(300, 95); // second point
+            ctx.lineTo(260, 95); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(260, 95); // first point
+            ctx.lineTo(240, 75); // second point
+            ctx.lineTo(280, 75); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(260, 95); // first point
+            ctx.lineTo(240, 115); // second point
+            ctx.lineTo(240, 75); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(240, 115); // first point
+            ctx.lineTo(260, 135); // second point
+            ctx.lineTo(260, 95); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(240, 115); // first point
+            ctx.lineTo(220, 135); // second point
+            ctx.lineTo(260, 135); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(220, 135); // first point
+            ctx.lineTo(200, 115); // second point
+            ctx.lineTo(240, 115); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(220, 135); // first point
+            ctx.lineTo(200, 155); // second point
+            ctx.lineTo(200, 115); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(200, 155); // first point
+            ctx.lineTo(220, 135); // second point
+            ctx.lineTo(220, 175); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(200, 155); // first point
+            ctx.lineTo(180, 175); // second point
+            ctx.lineTo(220, 175); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(180, 175); // first point
+            ctx.lineTo(160, 155); // second point
+            ctx.lineTo(200, 155); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(180, 175); // first point
+            ctx.lineTo(160, 155); // second point
+            ctx.lineTo(160, 195); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(160, 195); // first point
+            ctx.lineTo(180, 215); // second point
+            ctx.lineTo(180, 175); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(160, 195); // first point
+            ctx.lineTo(140, 215); // second point
+            ctx.lineTo(180, 215); // third point
+            ctx.fill();
+
+            
+            
+        }
+        snakes();
         
     }
 
