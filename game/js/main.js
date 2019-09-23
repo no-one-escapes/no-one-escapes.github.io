@@ -679,22 +679,71 @@ function main(){
             dicesSum = diceOne+diceTwo;
             stepForwardTwo();
 
+
         }
 
 
         function stepForwardTwo(){
+
+            let attempt;
+            attempt = 0;
+
             for (let i = 0; i < dicesSum; i++){
                 (function (i) {
                     setTimeout(function () {
                     move += 1;
+                    attempt +=1;
                     arcCoorX = field[numArray+move].x+60;
                     arcCoorY = field[numArray+move].y+45;
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     draw();
                     player();
+
+                    if (move == 16 && attempt == userNum){ // condition for steps back
+                        move = 16 - 4;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                        
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                        
+                        return move;
+                    }
+                    
+                    if (move == 61 && attempt == dicesSum){ // condition for steps back
+                            move = 61 - 40;
+                            arcCoorX = field[numArray+move].x+60;
+                            arcCoorY = field[numArray+move].y+45;
+                            
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            draw();
+                            player();
+                            
+                            return move;
+                
+                        }
+                
+                    if (move == 97 && attempt == dicesSum){ // condition for steps back
+                            move = 97 - 19;
+                            arcCoorX = field[numArray+move].x+60;
+                            arcCoorY = field[numArray+move].y+45;
+                            
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            draw();
+                            player();
+                            
+                            return move;
+                
+                        }
+                    if (move == 99 ){ // condition for steps back
+                            gratz();
+                            
+                        }
                 },700 * i + 1);
             }) (i);
         }
+
 
         return move;
 
@@ -708,6 +757,7 @@ function main(){
 
 
 
+        
 
 
         let userNum;
@@ -716,24 +766,87 @@ function main(){
         
             userNum = document.querySelector('.numOne').value;
             console.log(userNum);
+            let attempt;
+            attempt = 0;
             
             for (let i = 0; i < userNum; i++){
                 (function (i) {
                     setTimeout(function () {
                     move += 1;
+                    attempt +=1;
                     arcCoorX = field[numArray+move].x+60;
                     arcCoorY = field[numArray+move].y+45;
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     draw();
                     player();
+                    if (move == 6 && attempt == userNum){ // condition for steps back
+                        move = 6 - 3;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                        
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                        
+                        return move;
+                    }
+                    if (move == 16 && attempt == userNum){ // condition for steps back
+                        move = 16 - 4;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                        
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                        
+                        return move;
+                    }
+                    if (move == 61 && attempt == userNum){ // condition for steps back
+                            move = 61 - 40;
+                            arcCoorX = field[numArray+move].x+60;
+                            arcCoorY = field[numArray+move].y+45;
+                            
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            draw();
+                            player();
+                            
+                            return move;
+                
+                        }
+                
+                    if (move == 97 && attempt == userNum){ // condition for steps back
+                            move = 97 - 19;
+                            arcCoorX = field[numArray+move].x+60;
+                            arcCoorY = field[numArray+move].y+45;
+                            
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            draw();
+                            player();
+                            
+                            return move;
+                
+                        }
+                    if (move == 99 ){ // condition for steps back
+                            gratz();
+                            
+                        }
                 },700 * i + 1);
             }) (i);
+
+            
         }
-        
+
         return move;
 
         }
 
+        function gratz(){
+            ctx.beginPath();
+            ctx.arc(300, 300, 50, 0, 2*Math.PI);
+            ctx.fillStyle = "red";
+            ctx.fill();
+
+        }
 
     
         function forwardMove(){ //move forward with button
@@ -764,31 +877,6 @@ function main(){
             
         }
 
-        if (move == 61){ // condition for steps back
-            move = 61 - 40;
-            arcCoorX = field[numArray+move].x+60;
-            arcCoorY = field[numArray+move].y+45;
-            
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            draw();
-            player();
-            
-            return move;
-
-        }
-
-        // if (move == 97){ // condition for steps back
-        //     move = 97 - 19;
-        //     arcCoorX = field[numArray+move].x+60;
-        //     arcCoorY = field[numArray+move].y+45;
-            
-        //     ctx.clearRect(0, 0, canvas.width, canvas.height);
-        //     draw();
-        //     player();
-            
-        //     return move;
-
-        // }
 
         function snakes(){
             
@@ -973,144 +1061,8 @@ function main(){
 
 
 
-            // snake 98-79
+            // snake 98-79 ----------------------------
 
-
-            // ctx.beginPath();
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(305, 40); // first point
-            // ctx.lineTo(265, 40); // second point
-            // ctx.lineTo(305, 80); // third point
-            // ctx.fill();
-
-            // ctx.beginPath();
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(285, 60); // first point
-            // ctx.lineTo(265, 80); // second point
-            // ctx.lineTo(265, 40); // third point
-            // ctx.fill();
-
-            // ctx.beginPath();
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(265, 80); // first point
-            // ctx.lineTo(285, 100); // second point
-            // ctx.lineTo(285, 60); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(265, 80); // first point
-            // ctx.lineTo(245, 100); // second point
-            // ctx.lineTo(285, 100); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 2
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(245, 100); // first point
-            // ctx.lineTo(225, 80); // second point
-            // ctx.lineTo(265, 80); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 3
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(245, 100); // first point
-            // ctx.lineTo(225, 120); // second point
-            // ctx.lineTo(225, 80); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 4
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(225, 120); // first point
-            // ctx.lineTo(245, 140); // second point
-            // ctx.lineTo(245, 100); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 5
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(225, 120); // first point
-            // ctx.lineTo(205, 140); // second point
-            // ctx.lineTo(245, 140); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 6
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(205, 140); // first point
-            // ctx.lineTo(185, 120); // second point
-            // ctx.lineTo(245, 120); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 7
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(205, 140); // first point
-            // ctx.lineTo(185, 160); // second point
-            // ctx.lineTo(185, 120); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 8
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(185, 160); // first point
-            // ctx.lineTo(205, 180); // second point
-            // ctx.lineTo(205, 140); // third point
-            // ctx.fill();
-
-            // // ctx.beginPath(); //train 9
-            // // ctx.fillStyle = '#A62A87';
-            // // // ctx.fillStyle = 'white';
-            // // ctx.moveTo(555, 160); // first point
-            // // ctx.lineTo(575, 180); // second point
-            // // ctx.lineTo(535, 180); // third point
-            // // ctx.fill();
-
-            // ctx.beginPath(); //train 9
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(205, 180); // first point
-            // ctx.lineTo(185, 200); // second point
-            // ctx.lineTo(185, 160); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 10
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(205, 180); // first point
-            // ctx.lineTo(225, 200); // second point
-            // ctx.lineTo(185, 200); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 11
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(225, 200); // first point
-            // ctx.lineTo(245, 180); // second point
-            // ctx.lineTo(205, 180); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 12
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(225, 200); // first point
-            // ctx.lineTo(245, 220); // second point
-            // ctx.lineTo(245, 180); // third point
-            // ctx.fill();
-
-            // ctx.beginPath(); //train 13
-            // ctx.fillStyle = '#A62A87';
-            // // ctx.fillStyle = 'white';
-            // ctx.moveTo(245, 220); // first point
-            // ctx.lineTo(225, 240); // second point
-            // ctx.lineTo(225, 180); // third point
-            // ctx.fill();
 
             ctx.beginPath();
             ctx.fillStyle = '#A62A87';
@@ -1248,13 +1200,128 @@ function main(){
             ctx.lineTo(180, 215); // third point
             ctx.fill();
 
-            
-            
+            // snakes 17-13 ----------------------------
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(490, 740); // first point
+            ctx.lineTo(460, 770); // second point
+            ctx.lineTo(520, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(520, 800); // first point
+            ctx.lineTo(490, 770); // second point
+            ctx.lineTo(550, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(550, 740); // first point
+            ctx.lineTo(580, 770); // second point
+            ctx.lineTo(520, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(580, 800); // first point
+            ctx.lineTo(550, 770); // second point
+            ctx.lineTo(610, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(610, 740); // first point
+            ctx.lineTo(640, 770); // second point
+            ctx.lineTo(580, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(640, 800); // first point
+            ctx.lineTo(610, 770); // second point
+            ctx.lineTo(670, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(670, 740); // first point
+            ctx.lineTo(700, 770); // second point
+            ctx.lineTo(640, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(700, 800); // first point
+            ctx.lineTo(730, 770); // second point
+            ctx.lineTo(670, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(730, 740); // first point
+            ctx.lineTo(700, 770); // second point
+            ctx.lineTo(760, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(760, 800); // first point
+            ctx.lineTo(730, 770); // second point
+            ctx.lineTo(790, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(790, 740); // first point
+            ctx.lineTo(820, 770); // second point
+            ctx.lineTo(760, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(820, 800); // first point
+            ctx.lineTo(850, 770); // second point
+            ctx.lineTo(790, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(850, 740); // first point
+            ctx.lineTo(820, 770); // second point
+            ctx.lineTo(880, 770); // third point
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'white';
+            ctx.moveTo(880, 800); // first point
+            ctx.lineTo(850, 770); // second point
+            ctx.lineTo(910, 770); // third point
+            ctx.fill();
+
+        
         }
         snakes();
+
         
     }
 
+    
     draw();
     console.log(move);
     
