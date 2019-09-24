@@ -623,6 +623,7 @@ function main(){
         ctx.fillStyle = r.fill;
         ctx.fillRect(r.x, r.y, cellWidth, cellHeight)
         ctx.strokeStyle = "#fff";
+        ctx.lineWidth = 1;
         // ctx.strokeText(r.strokeText, r.x+100, r.y+20);
         ctx.strokeText(r.strokeText, r.x+12, r.y+20);
         ctx.closePath();
@@ -712,17 +713,40 @@ function main(){
                     }
                     
                     if (move == 61 && attempt == dicesSum){ // condition for steps back
-                            move = 61 - 40;
-                            arcCoorX = field[numArray+move].x+60;
-                            arcCoorY = field[numArray+move].y+45;
+                        move = 61 - 40;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
                             
-                            ctx.clearRect(0, 0, canvas.width, canvas.height);
-                            draw();
-                            player();
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
                             
-                            return move;
-                
-                        }
+                        return move;
+                    }
+
+                    if (move == 74 && attempt == userNum){ // condition for steps forward
+                        move = 74 + 11;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                                
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                                
+                        return move;
+                    }
+
+                    if (move == 79 && attempt == userNum){ // condition for steps forward
+                        move = 79 + 20;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
+                        return move;
+                    }
                 
                     if (move == 97 && attempt == dicesSum){ // condition for steps back
                             move = 97 - 19;
@@ -734,16 +758,14 @@ function main(){
                             player();
                             
                             return move;
-                
                         }
-                    if (move == 99 ){ // condition for steps back
+
+                    if (move >= 99 ){ // condition for steps back
                             gratz();
-                            
                         }
                 },700 * i + 1);
             }) (i);
         }
-
 
         return move;
 
@@ -779,6 +801,7 @@ function main(){
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     draw();
                     player();
+
                     if (move == 6 && attempt == userNum){ // condition for steps back
                         move = 6 - 3;
                         arcCoorX = field[numArray+move].x+60;
@@ -790,6 +813,7 @@ function main(){
                         
                         return move;
                     }
+
                     if (move == 16 && attempt == userNum){ // condition for steps back
                         move = 16 - 4;
                         arcCoorX = field[numArray+move].x+60;
@@ -801,6 +825,7 @@ function main(){
                         
                         return move;
                     }
+
                     if (move == 61 && attempt == userNum){ // condition for steps back
                             move = 61 - 40;
                             arcCoorX = field[numArray+move].x+60;
@@ -811,24 +836,46 @@ function main(){
                             player();
                             
                             return move;
-                
-                        }
+                    }
+
+                    if (move == 74 && attempt == userNum){ // condition for steps forward
+                        move = 74 + 11;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
+                        return move;
+                    }
+
+                    if (move == 79 && attempt == userNum){ // condition for steps forward
+                        move = 79 + 20;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
+                        return move;
+                    }
                 
                     if (move == 97 && attempt == userNum){ // condition for steps back
-                            move = 97 - 19;
-                            arcCoorX = field[numArray+move].x+60;
-                            arcCoorY = field[numArray+move].y+45;
+                        move = 97 - 19;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
                             
-                            ctx.clearRect(0, 0, canvas.width, canvas.height);
-                            draw();
-                            player();
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
                             
-                            return move;
-                
-                        }
+                        return move;
+                    }
+
                     if (move == 99 ){ // condition for steps back
-                            gratz();
-                            
+                        gratz();  
                         }
                 },700 * i + 1);
             }) (i);
@@ -1314,10 +1361,167 @@ function main(){
             ctx.lineTo(910, 770); // third point
             ctx.fill();
 
-        
+
+
+
+
+
+
+
+
+
+            
         }
         snakes();
 
+        function ladders(){
+            // 80-finish
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(100, 50); // first point
+            ctx.lineTo(85, 215); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(55, 48); // first point
+            ctx.lineTo(40, 213); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(55, 70); // first point
+            ctx.lineTo(100, 73); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(55, 100); // first point
+            ctx.lineTo(100, 103); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(52, 130); // first point
+            ctx.lineTo(98, 133); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(50, 160); // first point
+            ctx.lineTo(95, 163); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(48, 190); // first point
+            ctx.lineTo(93, 193); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+
+            // ---------------75-86-------------------------
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(735, 104); // first point
+            ctx.lineTo(720, 265); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(675, 100); // first point
+            ctx.lineTo(660, 261); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(675, 120); // first point
+            ctx.lineTo(735, 125); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(675, 150); // first point
+            ctx.lineTo(735, 155); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(665, 180); // first point
+            ctx.lineTo(725, 185); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(660, 210); // first point
+            ctx.lineTo(720, 215); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(655, 240); // first point
+            ctx.lineTo(715, 245); // second point
+            ctx.fill();
+            ctx.lineWidth = 15;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+        }
+        ladders();
+
+        
         
     }
 
