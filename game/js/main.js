@@ -700,6 +700,18 @@ function main(){
                     draw();
                     player();
 
+                    if (move == 2 && attempt == userNum){ // condition for steps forward
+                        move = 2 + 18;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
+                        return move;
+                    }
+
                     if (move == 7 && attempt == userNum){ // condition for steps forward
                         move = 7 + 22;
                         arcCoorX = field[numArray+move].x+60;
@@ -711,7 +723,7 @@ function main(){
                             
                         return move;
                     }
-                    
+
                     if (move == 16 && attempt == userNum){ // condition for steps back
                         move = 16 - 4;
                         arcCoorX = field[numArray+move].x+60;
@@ -721,6 +733,18 @@ function main(){
                         draw();
                         player();
                         
+                        return move;
+                    }
+
+                    if (move == 27 && attempt == userNum){ // condition for steps forward
+                        move = 27 + 56;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
                         return move;
                     }
                     
@@ -762,6 +786,18 @@ function main(){
 
                     if (move == 79 && attempt == userNum){ // condition for steps forward
                         move = 79 + 20;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
+                        return move;
+                    }
+
+                    if (move == 89 && attempt == userNum){ // condition for steps forward
+                        move = 89 + 1;
                         arcCoorX = field[numArray+move].x+60;
                         arcCoorY = field[numArray+move].y+45;
                             
@@ -826,7 +862,18 @@ function main(){
                     draw();
                     player();
 
-                    
+                    if (move == 2 && attempt == userNum){ // condition for steps forward
+                        move = 2 + 18;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
+                        return move;
+                    }
+
                     if (move == 7 && attempt == userNum){ // condition for steps forward
                         move = 7 + 22;
                         arcCoorX = field[numArray+move].x+60;
@@ -848,6 +895,18 @@ function main(){
                         draw();
                         player();
                         
+                        return move;
+                    }
+
+                    if (move == 27 && attempt == userNum){ // condition for steps forward
+                        move = 27 + 56;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
                         return move;
                     }
 
@@ -875,8 +934,32 @@ function main(){
                         return move;
                     }
 
+                    if (move == 74 && attempt == userNum){ // condition for steps forward
+                        move = 74 + 11;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                                
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                                
+                        return move;
+                    }
+
                     if (move == 79 && attempt == userNum){ // condition for steps forward
                         move = 79 + 20;
+                        arcCoorX = field[numArray+move].x+60;
+                        arcCoorY = field[numArray+move].y+45;
+                            
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        draw();
+                        player();
+                            
+                        return move;
+                    }
+
+                    if (move == 89 && attempt == userNum){ // condition for steps forward
+                        move = 89 + 1;
                         arcCoorX = field[numArray+move].x+60;
                         arcCoorY = field[numArray+move].y+45;
                             
@@ -1400,7 +1483,9 @@ function main(){
         snakes();
 
         function ladders(){
-            // 80-finish
+
+            // ----- 80-finish -----
+
             ctx.beginPath();
             ctx.fillStyle = '#A62A87';
             // ctx.fillStyle = 'black';
@@ -1471,8 +1556,7 @@ function main(){
             // ctx.strokeStyle = '#00BF32';
             ctx.stroke();
 
-
-            // ---------------75-86-------------------------
+            // ----- 75-86 -----
 
             ctx.beginPath();
             ctx.fillStyle = '#A62A87';
@@ -1544,7 +1628,7 @@ function main(){
             // ctx.strokeStyle = '#00BF32';
             ctx.stroke();
 
-            //-------------58-77------------
+            // ----- 58-77 -----
 
             ctx.beginPath();
             ctx.fillStyle = '#A62A87';
@@ -1606,7 +1690,7 @@ function main(){
             // ctx.strokeStyle = '#00BF32';
             ctx.stroke();
 
-            //-----------8-30---------
+            // ----- 8-30 -----
 
             ctx.beginPath();
             ctx.fillStyle = '#A62A87';
@@ -1685,6 +1769,332 @@ function main(){
             ctx.lineTo(995, 860); // second point
             ctx.fill();
             ctx.lineWidth = 13;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            // ----- 3-21 -----
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(90, 640); // first point
+            ctx.lineTo(320, 835); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(45, 690); // first point
+            ctx.lineTo(275, 890); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(63, 710); // first point
+            ctx.lineTo(113, 655); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(100, 742); // first point
+            ctx.lineTo(150, 687); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(140, 775); // first point
+            ctx.lineTo(190, 720); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(178, 808); // first point
+            ctx.lineTo(228, 753); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(213, 842); // first point
+            ctx.lineTo(263, 787); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(253, 873); // first point
+            ctx.lineTo(303, 818); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            // ----- 90-91 -----
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(1225, 20); // first point
+            ctx.lineTo(1230, 162); // second point
+            ctx.fill();
+            ctx.lineWidth = 14;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(1165, 20); // first point
+            ctx.lineTo(1170, 162); // second point
+            ctx.fill();
+            ctx.lineWidth = 14;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(1165, 45); // first point
+            ctx.lineTo(1220, 44); // second point
+            ctx.fill();
+            ctx.lineWidth = 14;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(1165, 75); // first point
+            ctx.lineTo(1220, 74); // second point
+            ctx.fill();
+            ctx.lineWidth = 14;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(1170, 105); // first point
+            ctx.lineTo(1225, 104); // second point
+            ctx.fill();
+            ctx.lineWidth = 14;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(1170, 135); // first point
+            ctx.lineTo(1225, 134); // second point
+            ctx.fill();
+            ctx.lineWidth = 14;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            // ----- 28-84 -----
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(452, 107); // first point
+            ctx.lineTo(973, 658); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(405, 145); // first point
+            ctx.lineTo(925, 700); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(430, 175); // first point
+            ctx.lineTo(475, 137); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(460, 205); // first point
+            ctx.lineTo(505, 167); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(493, 238); // first point
+            ctx.lineTo(538, 200); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(525, 270); // first point
+            ctx.lineTo(570, 232); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(558, 303); // first point
+            ctx.lineTo(603, 265); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(588, 338); // first point
+            ctx.lineTo(635, 298); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(621, 371); // first point
+            ctx.lineTo(669, 331); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(651, 405); // first point
+            ctx.lineTo(700, 365); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(684, 438); // first point
+            ctx.lineTo(733, 398); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(714, 472); // first point
+            ctx.lineTo(763, 431); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(745, 505); // first point
+            ctx.lineTo(795, 464); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(775, 540); // first point
+            ctx.lineTo(825, 499); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(805, 575); // first point
+            ctx.lineTo(855, 532); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(835, 610); // first point
+            ctx.lineTo(885, 568); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(865, 643); // first point
+            ctx.lineTo(915, 601); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
+            // ctx.strokeStyle = '#00BF32';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = '#A62A87';
+            // ctx.fillStyle = 'black';
+            ctx.moveTo(895, 673); // first point
+            ctx.lineTo(945, 632); // second point
+            ctx.fill();
+            ctx.lineWidth = 10;
             // ctx.strokeStyle = '#00BF32';
             ctx.stroke();
 
