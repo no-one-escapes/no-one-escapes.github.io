@@ -38,10 +38,10 @@ function drawObj(){
   b = Math.round(Math.random()*255);
   c = Math.round(Math.random()*255);
   colorRGB = 'rgb(' + a + ',' + b + ',' + c + ')' ;
-  x = Math.random() * canvas.width;
-  y = Math.random() * canvas.height;
+  xRan = Math.random() * canvas.width;
+  yRan = Math.random() * canvas.height;
   ctx.beginPath();
-  ctx.arc(x,y,15,0,Math.PI * 2,false);
+  ctx.arc(xRan, yRan, 15, 0, Math.PI * 2, false);
   ctx.fillStyle = colorRGB;
   ctx.fill();
   ctx.stroke();
