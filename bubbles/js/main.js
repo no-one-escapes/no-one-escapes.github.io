@@ -107,3 +107,9 @@ function drawObj(){
         },50 * i + 1);
             }) (i);
   }
+
+
+// ----- fourth canvas -----
+
+let canvasFour = document.getElementById('myCanvasFourth');
+let ctxFour = canvasFour.getContext('2d');
