@@ -113,3 +113,24 @@ function drawObj(){
 
 let canvasFour = document.getElementById('myCanvasFourth');
 let ctxFour = canvasFour.getContext('2d');
+
+canvasFour.addEventListener('click', createArc);
+
+function createArc(e) {
+
+    x = e.offsetX;
+    y = e.offsetY;
+    radius = Math.round(Math.random()*60);
+    a = Math.round(Math.random()*255);
+    b = Math.round(Math.random()*255);
+    c = Math.round(Math.random()*255);
+    colorRGB = 'rgb(' + a + ',' + b + ',' + c + ')' ;
+
+
+    // ctxFour.clearRect(0, 0, canvasFour.width, canvasFour.height);
+    ctxFour.beginPath();
+    ctxFour.arc(x, y, radius, 0, Math.PI * 2, false);
+    ctxFour.fillStyle = colorRGB;
+    ctxFour.fill();
+    ctxFour.closePath();
+}
