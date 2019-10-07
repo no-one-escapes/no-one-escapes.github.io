@@ -1,6 +1,6 @@
 
 
-// ----- first canvas -----
+// ----- canvas one -----
 
 
 let canvasOne = document.getElementById('myCanvasOne');
@@ -31,7 +31,7 @@ function moveArc() {
 moveArc();
 
 
-// ----- second canvas -----
+// ----- canvas two -----
 
 
 let canvasTwo = document.getElementById('myCanvasTwo');
@@ -80,7 +80,7 @@ function colorfulArc() {
 colorfulArc();
 
 
-// ----- third canvas -----
+// ----- canvas three -----
 
 
 let canvasThree = document.getElementById('myCanvasThree');
@@ -109,9 +109,9 @@ function drawObj(){
   }
 
 
-// ----- fourth canvas -----
+// ----- canvas four -----
 
-let canvasFour = document.getElementById('myCanvasFourth');
+let canvasFour = document.getElementById('myCanvasFour');
 let ctxFour = canvasFour.getContext('2d');
 
 canvasFour.addEventListener('click', createArc);
@@ -134,3 +134,9 @@ function createArc(e) {
     ctxFour.fill();
     ctxFour.closePath();
 }
+
+
+// ----- canvas five -----
+
+let canvasFive = document.getElementById('myCanvasFive');
+let ctxFive = canvasFive.getContext('2d');
