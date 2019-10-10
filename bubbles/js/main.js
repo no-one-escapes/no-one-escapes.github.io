@@ -140,40 +140,28 @@ function createArc(e) {
 
 let canvasFive = document.getElementById('myCanvasFive');
 let ctxFive = canvasFive.getContext('2d');
-let canvasFive = document.getElementById('myCanvasFive');
-let ctxFive = canvasFive.getContext('2d');
 
-let r = Math.round(Math.random() * 100);
-let aRan = Math.round(Math.random()*255);
-let bRan = Math.round(Math.random()*255);
-let cRan = Math.round(Math.random()*255);
-let colorRGBRan = 'rgb(' + aRan + ',' + bRan + ',' + cRan + ')' ;
-let xRa = Math.round(Math.random() * canvasFive.width);
-let yRa = Math.round(Math.random() * canvasFive.height);
+for (let j = 0; j < 25; j++){
 
-function randomNum(){
-    // r = Math.round(Math.random() * (r)+r/2);
-    r = Math.round(r/2 + Math.random() * (r - r/2));
-    aRan = Math.round(Math.random()*255);
-    bRan = Math.round(Math.random()*255);
-    cRan = Math.round(Math.random()*255);
-    colorRGBRan = 'rgb(' + aRan + ',' + bRan + ',' + cRan + ')' ;
-       
-    return r, colorRGBRan;
-}
+    let r = 100;
+    let xRa = Math.round(Math.random() * canvasFive.width);
+    let yRa = Math.round(Math.random() * canvasFive.height);
 
-for (let i = 0; i < 10; i++){
-    randomNum();
-    console.log(r);
+    for (let i = 0; i < 10; i++){
+        r = Math.round(r/2 + Math.random() * (r - r/2));
+        aRan = Math.round(Math.random()*255);
+        bRan = Math.round(Math.random()*255);
+        cRan = Math.round(Math.random()*255);
+        colorRGBRan = 'rgb(' + aRan + ',' + bRan + ',' + cRan + ')' ;
+        
+        if (r < 10){
+            break;
+        }
 
-    if (r < 10){
-        break;
+        ctxFive.beginPath();
+        ctxFive.fillStyle = colorRGBRan;
+        ctxFive.arc(xRa, yRa, r, 0, Math.PI * 2, false);
+        ctxFive.fill();
+        ctxFive.closePath();
     }
-
-    ctxFive.beginPath();
-    ctxFive.fillStyle = colorRGBRan;
-    ctxFive.arc(xRa, yRa, r, 0, Math.PI * 2, false);
-    ctxFive.fill();
-    ctxFive.closePath();
-    console.log(colorRGBRan)
 }
