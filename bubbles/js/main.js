@@ -165,3 +165,9 @@ for (let j = 0; j < 25; j++){
         ctxFive.closePath();
     }
 }
+
+
+// ----- canvas six -----
+
+let canvasSix = document.getElementById('myCanvasSix');
+let ctxSix = canvasSix.getContext('2d');
