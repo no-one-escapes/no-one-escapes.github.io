@@ -171,3 +171,5 @@ for (let j = 0; j < 25; j++){
 
 let canvasSix = document.getElementById('myCanvasSix');
 let ctxSix = canvasSix.getContext('2d');
+
+// no idea
