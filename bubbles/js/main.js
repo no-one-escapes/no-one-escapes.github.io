@@ -178,3 +178,9 @@ let ctxSix = canvasSix.getContext('2d');
 
 let canvasSeven = document.getElementById('myCanvasSeven');
 let ctxSeven = canvasSeven.getContext('2d');
+
+
+// ----- canvas eight -----
+
+let canvasEight = document.getElementById('myCanvasEight');
+let ctxEight = canvasEight.getContext('2d');
