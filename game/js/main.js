@@ -614,6 +614,7 @@ function main(){
 
     let numArray = 0; //index array
     let move = 0; // steps for player 1
+
     let arcCoorX = field[numArray+move].x+60;
     let arcCoorY = field[numArray+move].y+45;
     
@@ -639,7 +640,7 @@ function main(){
             rect(field[i]);
         }
     
-        function player(){
+        function onePlayer(){
             ctx.beginPath();
             ctx.arc(arcCoorX, arcCoorY, 15, 0, 2*Math.PI);
             ctx.fillStyle = "white";
@@ -661,14 +662,16 @@ function main(){
             
         }
 
-        document.querySelector('.player').onclick = player;
-        document.querySelector('.forward').onclick = forwardMove;
-        document.querySelector('.back').onclick = backMove;
-        document.querySelector('.numOneValue').onclick = stepForward;
+        document.querySelector('.one_player').onclick = onePlayer;
+        // document.querySelector('.two_players').onclick = twoPlayers;
+        // document.querySelector('.three_players').onclick = threePlayers;
+        // document.querySelector('.four_players').onclick = fourPlayers;
+        
         document.querySelector('.dices').onclick = dices;
 
 
         let dicesSum;
+        let count = 0;
 
         function dices(){
 
@@ -681,13 +684,21 @@ function main(){
             document.getElementById('diceTwo').innerHTML = diceTwo;
 
             dicesSum = diceOne+diceTwo;
-            stepForwardTwo();
+            count += 1;
+            if (count == 5){
+                count = 0;
+            }
+            
+            stepForward();
 
+            return count;
 
         }
 
 
-        function stepForwardTwo(){
+        function stepForward(){
+
+            if(count == 1){
 
             let attempt;
             attempt = 0;
@@ -701,7 +712,7 @@ function main(){
                     arcCoorY = field[numArray+move].y+45;
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     draw();
-                    player();
+                    onePlayer();
 
                     if (move == 2 && attempt == dicesSum){ // condition for steps forward
                         move = 2 + 18;
@@ -710,7 +721,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -722,7 +733,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -734,7 +745,7 @@ function main(){
                         
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                         
                         return move;
                     }
@@ -746,7 +757,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -758,7 +769,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -770,7 +781,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -782,7 +793,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -794,7 +805,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -806,7 +817,7 @@ function main(){
                                 
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                                 
                         return move;
                     }
@@ -818,7 +829,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -830,7 +841,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -842,7 +853,7 @@ function main(){
                             
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                             
                         return move;
                     }
@@ -854,7 +865,7 @@ function main(){
                         
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         draw();
-                        player();
+                        onePlayer();
                         
                         return move;
                     }
@@ -866,7 +877,7 @@ function main(){
                             
                             ctx.clearRect(0, 0, canvas.width, canvas.height);
                             draw();
-                            player();
+                            onePlayer();
                             
                             return move;
                         }
@@ -876,212 +887,17 @@ function main(){
                         }
                 },700 * i + 1);
             }) (i);
-        }
+        } 
+    }
+
+    if(count == 2){
+        console.log('work');
+    }
 
         return move;
 
         }
 
-        let userNum;
-
-        function stepForward(){ // move with input's value
-        
-            userNum = document.querySelector('.numOne').value;
-            console.log(userNum);
-            let attempt;
-            attempt = 0;
-            
-            for (let i = 0; i < userNum; i++){
-                (function (i) {
-                    setTimeout(function () {
-                    move += 1;
-                    attempt +=1;
-                    arcCoorX = field[numArray+move].x+60;
-                    arcCoorY = field[numArray+move].y+45;
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    draw();
-                    player();
-
-                    if (move == 2 && attempt == userNum){ // condition for steps forward
-                        move = 2 + 18;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 7 && attempt == userNum){ // condition for steps forward
-                        move = 7 + 22;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 16 && attempt == userNum){ // condition for steps back
-                        move = 16 - 4;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                        
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                        
-                        return move;
-                    }
-
-                    if (move == 27 && attempt == userNum){ // condition for steps forward
-                        move = 27 + 56;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 56 && attempt == dicesSum){ // condition for steps back
-                        move = 56 - 19;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 57 && attempt == userNum){ // condition for steps forward
-                        move = 57 + 19;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 61 && attempt == userNum){ // condition for steps back
-                        move = 61 - 40;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                        
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                        
-                        return move;
-                    }
-
-                    if (move == 68 && attempt == userNum){ // condition for steps back
-                        move = 68 - 40;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 74 && attempt == userNum){ // condition for steps forward
-                        move = 74 + 11;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                                
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                                
-                        return move;
-                    }
-
-                    if (move == 79 && attempt == userNum){ // condition for steps forward
-                        move = 79 + 20;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 87 && attempt == userNum){ // condition for steps back
-                        move = 87 - 64;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 89 && attempt == userNum){ // condition for steps forward
-                        move = 89 + 1;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 92 && attempt == userNum){ // condition for steps back
-                        move = 92 - 22;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                        
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                        
-                        return move;
-                    }
-                
-                    if (move == 97 && attempt == userNum){ // condition for steps back
-                        move = 97 - 19;
-                        arcCoorX = field[numArray+move].x+60;
-                        arcCoorY = field[numArray+move].y+45;
-                            
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        draw();
-                        player();
-                            
-                        return move;
-                    }
-
-                    if (move == 99 || move == 99 && attempt == userNum ){ // condition for steps back
-                        gratz();  
-                        }
-                },700 * i + 1);
-            }) (i);
-
-            
-        }
-
-        return move;
-
-        }
 
         function gratz(){
             ctx.beginPath();
@@ -1092,34 +908,7 @@ function main(){
         }
 
     
-        function forwardMove(){ //move forward with button
-            move += 1;
-            arcCoorX = field[numArray+move].x+60;
-            arcCoorY = field[numArray+move].y+45;
-            
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            draw();
-            player();
-            console.log(arcCoorX);
-            console.log(move);
-            return move;
-
-        }
-    
-        function backMove(){ //move back with button
-            move -= 1;
-            arcCoorX = field[numArray+move].x+60;
-            arcCoorY = field[numArray+move].y+45;
-            
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            draw();
-            player();
-            console.log(arcCoorX);
-            console.log(move);
-            return move;
-            
-        }
-
+       
 
         function snakes(){
             
