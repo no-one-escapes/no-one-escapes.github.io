@@ -185,3 +185,4 @@ let ctxSeven = canvasSeven.getContext('2d');
 let canvasEight = document.getElementById('myCanvasEight');
 let ctxEight = canvasEight.getContext('2d');
 //WiP
+// no idea
