@@ -1,1 +1,10 @@
+main{
+    margin: 0 auto;
+}
 
+button {
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
