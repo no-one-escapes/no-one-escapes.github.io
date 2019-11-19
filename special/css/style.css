@@ -1,10 +1,44 @@
-main{
-    margin: 0 auto;
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    outline: 0 !important;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.main{
+    margin: 100px auto;
+    display: block;
+    text-align: center;
 }
 
 button {
     background-color: red;
     width: 25px;
     height: 25px;
+    border-radius: 50%;
+    margin: 15px 7px;
+}
+
+canvas{
+    background-color: #DCDCDC;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    width: 155px;
+    margin: 10px auto;
+
+}
+
+img{
+    height: 20px;
+}
+
+.select{
+    background-color: red;
     border-radius: 50%;
 }
