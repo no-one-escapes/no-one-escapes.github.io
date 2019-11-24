@@ -1,51 +1,66 @@
 let select = 0;
 let choose = 0;
 let selectTwo = 0;
+let timeTicks = 900;
 
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 canvas.width  = 32 * 6;
 canvas.height = 16 * 6;
 
-spritesFood = new Image();
-spritesFood.src = "image/spritesFood.png"
-
 pic = new Image();
 pic.src = "image/spritesB.png";  
 pic.onload = eggStart;
 
-
-
 function eggStart() {
-    for (let i = 0; i < 900; i++){
+    for (let i = 0; i <= timeTicks; i++) {
         (function (i) {
-          setTimeout(function () {
-              if (choose){
-              } else if (i % 2==0){
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.drawImage(pic, 1, 4, 30, 30, 80, 40, 30, 30);
+            setTimeout(function () {
+                if (choose){
+                } else if (i == timeTicks) {
+                    eggHatching();
+                } else if (i % 2==0) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(pic, 1, 4, 30, 30, 80, 40, 30, 30);
                 } else {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(pic, 36, 1, 30, 33, 80, 37, 30, 33);
-                }
+                } 
             },1000 * i + 1);
-                }) (i);
-      }
+        }) (i);
+    }
 }
 
-
+function eggHatching() {
+    for (let i = 0; i < 5; i++) {
+        (function (i) {
+            setTimeout(function () {
+                if (i == 0 || i == 2) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(pic, 1, 4, 30, 30, 77, 40, 30, 30);
+                } else if (i == 1 || i == 3) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(pic, 1, 4, 30, 30, 83, 40, 30, 30);
+                } else if (i == 4) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(pic, 70, 1, 30, 42, 80, 27, 30, 42);
+                }
+          },1000 * i + 1);
+      }) (i);
+    }
+}
 
 document.getElementById('a').onclick = selectButton;
 document.getElementById('b').onclick = chooseButton;
 document.getElementById('c').onclick = cancelButton;
 
-function selectButton(){
+function selectButton() {
 
     select += 1;
 
     if (choose > 0) {
         // document.getElementById('a').onclick = selectButtonTwo;
-    } else if(select == 1){
+    } else if(select == 1) {
         document.getElementById('food').classList.add('select');
     } else if (select == 2) {
         document.getElementById('food').classList.remove('select');
@@ -83,12 +98,12 @@ function selectButton(){
 
 // }
 
-function chooseButton(){
+function chooseButton() {
 
     choose += 1;
     document.getElementById('a').onclick = selectButtonTwo;
 
-    if(select == 1 && choose == 1){
+    if (select == 1 && choose == 1) {
         selectTwo = 1;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(pic, 156, 3, 90, 42, 60, 30, 90, 42);  
@@ -126,12 +141,11 @@ function chooseButton(){
     }
 }
 
-function cancelButton(){
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    document.getElementById('a').onclick = selectButton;
+function cancelButton() {
 
     if (select || choose) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        document.getElementById('a').onclick = selectButton;
         document.getElementById('food').classList.remove('select');
         document.getElementById('light').classList.remove('select');
         document.getElementById('play').classList.remove('select');
@@ -140,26 +154,24 @@ function cancelButton(){
         document.getElementById('statistics').classList.remove('select');
         document.getElementById('discipline').classList.remove('select');
         document.getElementById('warning').classList.remove('select');
+        select = 0;
+        choose = 0;
     }
 
-    select = 0;
-    choose = 0;
-    eggStart();
+    
 }
 
-function selectButtonTwo (){
+function selectButtonTwo() {
     selectTwo +=1;
     if (select == 1) {
-    if(selectTwo % 2 == 1){
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(pic, 156, 3, 90, 42, 60, 30, 90, 42); 
-        ctx.drawImage(pic, 135, 3, 18, 21, 35, 30, 18, 21);
-    } else if (selectTwo % 2 == 0) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(pic, 156, 3, 90, 42, 60, 30, 90, 42); 
-        ctx.drawImage(pic, 135, 3, 18, 21, 35, 52, 18, 21);
-    } 
+        if (selectTwo % 2 == 1) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(pic, 156, 3, 90, 42, 60, 30, 90, 42); 
+            ctx.drawImage(pic, 135, 3, 18, 21, 35, 30, 18, 21);
+        } else if (selectTwo % 2 == 0) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(pic, 156, 3, 90, 42, 60, 30, 90, 42); 
+            ctx.drawImage(pic, 135, 3, 18, 21, 35, 52, 18, 21);
+        } 
+    }
 }
-}
-
-//sprites wip
