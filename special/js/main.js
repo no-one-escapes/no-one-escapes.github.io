@@ -2,6 +2,7 @@ let select = 0;
 let choose = 0;
 let selectTwo = 0;
 let timeTicks = 900;
+let timeToHatch = 0;
 
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
@@ -9,7 +10,7 @@ canvas.width  = 32 * 6;
 canvas.height = 16 * 6;
 
 pic = new Image();
-pic.src = "image/spritesB.png";  
+pic.src = "image/spritesBai.png";  
 pic.onload = eggStart;
 
 function eggStart() {
@@ -22,9 +23,13 @@ function eggStart() {
                 } else if (i % 2==0) {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(pic, 1, 4, 30, 30, 80, 40, 30, 30);
+                    timeToHatch +=1;
+                    console.log(timeToHatch)
                 } else {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(pic, 36, 1, 30, 33, 80, 37, 30, 33);
+                    timeToHatch +=1
+                    console.log(timeToHatch);
                 } 
             },1000 * i + 1);
         }) (i);
@@ -87,6 +92,7 @@ function selectButton() {
         select = 0;
         document.getElementById('warning').classList.remove('select');
     }
+
 }
 
 // drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
@@ -106,14 +112,14 @@ function chooseButton() {
     if (select == 1 && choose == 1) {
         selectTwo = 1;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(pic, 156, 3, 90, 42, 60, 30, 90, 42);  
+        ctx.drawImage(pic, 153, 1, 70, 42, 60, 30, 70, 42);  
         if (selectTwo == 1){
-            ctx.drawImage(pic, 135, 3, 18, 21, 35, 30, 18, 21);
+            ctx.drawImage(pic, 132, 1, 18, 21, 35, 30, 18, 21);
         }
     } else if (select == 2 && choose == 1) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "yellow";
-        ctx.fillRect(35, 35, 6, 6)
+        ctx.drawImage(pic, 256, 56, 45, 42, 60, 30, 45, 42); 
+        ctx.drawImage(pic, 132, 1, 18, 21, 35, 30, 18, 21);
     } else if (select == 3 && choose == 1) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "green";
@@ -139,6 +145,7 @@ function chooseButton() {
         ctx.fillStyle = "black";
         ctx.fillRect(65, 30, 6, 6)
     }
+
 }
 
 function cancelButton() {
@@ -156,22 +163,36 @@ function cancelButton() {
         document.getElementById('warning').classList.remove('select');
         select = 0;
         choose = 0;
+        selectTwo = 0;
     }
 
     
 }
 
 function selectButtonTwo() {
+
     selectTwo +=1;
+
     if (select == 1) {
         if (selectTwo % 2 == 1) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(pic, 156, 3, 90, 42, 60, 30, 90, 42); 
-            ctx.drawImage(pic, 135, 3, 18, 21, 35, 30, 18, 21);
+            ctx.drawImage(pic, 153, 1, 70, 42, 60, 30, 70, 42); 
+            ctx.drawImage(pic, 132, 1, 18, 21, 35, 30, 18, 21);
         } else if (selectTwo % 2 == 0) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(pic, 156, 3, 90, 42, 60, 30, 90, 42); 
-            ctx.drawImage(pic, 135, 3, 18, 21, 35, 52, 18, 21);
-        } 
+            ctx.drawImage(pic, 153, 1, 70, 42, 60, 30, 70, 42); 
+            ctx.drawImage(pic, 132, 1, 18, 21, 35, 52, 18, 21);
+        }  
+    } else if (select == 2) {
+        if (selectTwo % 2 == 1) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(pic, 256, 56, 45, 42, 60, 30, 45, 42); 
+            ctx.drawImage(pic, 132, 1, 18, 21, 35, 52, 18, 21);
+        } else if (selectTwo % 2 == 0) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(pic, 256, 56, 45, 42, 60, 30, 45, 42);
+            ctx.drawImage(pic, 132, 1, 18, 21, 35, 30, 18, 21);
+        }  
     }
+
 }
