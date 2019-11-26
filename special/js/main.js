@@ -1,8 +1,17 @@
 let select = 0;
 let choose = 0;
 let selectTwo = 0;
-let timeTicks = 900;
-let timeToHatch = 0;
+let timeToHatch = 30;
+let timeTicks = 0;
+let counter = 0;
+let timeToGrowToChild = 100;
+let hatch = 0;
+let ill = 0;
+
+
+
+
+
 
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
@@ -11,49 +20,95 @@ canvas.height = 16 * 6;
 
 pic = new Image();
 pic.src = "image/spritesBai.png";  
-pic.onload = eggStart;
+pic.onload = babyAnimation;
 
-function eggStart() {
-    for (let i = 0; i <= timeTicks; i++) {
+// function eggStart() {
+//     for (let i = 0; i <= timeToHatch; i++) {
+//         (function (i) {
+//             setTimeout(function () {
+//                 if (choose){
+//                 } else if (i == timeToHatch) {
+//                     eggHatching();
+//                 } else if (i % 2==0) {
+//                     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//                     ctx.drawImage(pic, 1, 4, 30, 30, 80, 50, 30, 30);
+//                     timeTicks +=1;
+//                     console.log(timeTicks)
+//                 } else {
+//                     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//                     ctx.drawImage(pic, 36, 1, 30, 33, 80, 47, 30, 33);
+//                     timeTicks +=1
+//                     console.log(timeTicks);
+//                 } 
+//             },1000 * i + 1);
+//         }) (i);
+//     }
+// }
+
+// function eggHatching() {
+//     for (let i = 0; i < 5; i++) {
+//         (function (i) {
+//             setTimeout(function () {
+//                 if (i == 0 || i == 2) {
+//                     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//                     ctx.drawImage(pic, 1, 4, 30, 30, 77, 50, 30, 30);
+//                 } else if (i == 1 || i == 3) {
+//                     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//                     ctx.drawImage(pic, 1, 4, 30, 30, 83, 50, 30, 30);
+//                 } else if (i == 4) {
+//                     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//                     ctx.drawImage(pic, 70, 1, 30, 42, 80, 37, 30, 42);
+//                 }
+//           },1000 * i + 1);
+//       }) (i);
+//     }
+// }
+
+function babyAnimation() {
+
+    let xBig = 83;
+    let xSmall = 80;
+    let moveX = 15;
+    
+    
+    for (let i = 0; i <= timeToGrowToChild; i++) {
         (function (i) {
             setTimeout(function () {
                 if (choose){
-                } else if (i == timeTicks) {
+                    
+                } else if (i == timeToGrowToChild) {
                     eggHatching();
                 } else if (i % 2==0) {
+
+                    if (xBig + 25 > canvas.width || xBig - 20 < 0){
+                        moveX = -moveX;
+                    }
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(pic, 1, 4, 30, 30, 80, 40, 30, 30);
-                    timeToHatch +=1;
-                    console.log(timeToHatch)
+                    ctx.drawImage(pic, 107, 2, 18, 18, xBig, 70, 18, 18);
+                    xBig += moveX;
+                    // console.log(moveX + ' movex')
+                    // console.log(xBig + ' xbig')
+                    counter += 1;
+                    console.log(counter);
+                    
                 } else {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(pic, 36, 1, 30, 33, 80, 37, 30, 33);
-                    timeToHatch +=1
-                    console.log(timeToHatch);
+                    ctx.drawImage(pic, 104, 25, 24, 10, xSmall, 86, 24, 10);
+                    xSmall += moveX;
+                    // console.log(moveX + ' movex2')
+                    // console.log(xSmall + ' xSmall')
+                    counter += 1;
+                    console.log(counter);
+                    console.log(timeToGrowToChild);
+                    
                 } 
             },1000 * i + 1);
         }) (i);
     }
+    hatch += 1;
 }
 
-function eggHatching() {
-    for (let i = 0; i < 5; i++) {
-        (function (i) {
-            setTimeout(function () {
-                if (i == 0 || i == 2) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(pic, 1, 4, 30, 30, 77, 40, 30, 30);
-                } else if (i == 1 || i == 3) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(pic, 1, 4, 30, 30, 83, 40, 30, 30);
-                } else if (i == 4) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(pic, 70, 1, 30, 42, 80, 27, 30, 42);
-                }
-          },1000 * i + 1);
-      }) (i);
-    }
-}
+// setTimeout(babyAnimation, (timeToHatch + 5) * 1000);
 
 document.getElementById('a').onclick = selectButton;
 document.getElementById('b').onclick = chooseButton;
@@ -109,7 +164,9 @@ function chooseButton() {
     choose += 1;
     document.getElementById('a').onclick = selectButtonTwo;
 
-    if (select == 1 && choose == 1) {
+    if (hatch == 0) {
+        cancelButton();
+    } else if (select == 1 && choose == 1) {
         selectTwo = 1;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(pic, 153, 1, 70, 42, 60, 30, 70, 42);  
@@ -120,14 +177,15 @@ function chooseButton() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(pic, 256, 56, 45, 42, 60, 30, 45, 42); 
         ctx.drawImage(pic, 132, 1, 18, 21, 35, 30, 18, 21);
-    } else if (select == 3 && choose == 1) {
+    } else if (select == 3 && choose == 1 ) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "green";
         ctx.fillRect(40, 40, 6, 6)
     } else if (select == 4 && choose == 1) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "white";
-        ctx.fillRect(45, 30, 6, 6)
+        if (ill == 0){
+            notIll();
+            setTimeout(cancelButton, 3500);
+        }
     } else if (select == 5 && choose == 1) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "bisque";
@@ -193,6 +251,26 @@ function selectButtonTwo() {
             ctx.drawImage(pic, 256, 56, 45, 42, 60, 30, 45, 42);
             ctx.drawImage(pic, 132, 1, 18, 21, 35, 30, 18, 21);
         }  
+    } else if (select == 6){
+        if (selectTwo == 1){
+
+        }
     }
 
+}
+
+function notIll(){
+    for (let i = 0; i < 3; i++) {
+        (function (i) {
+            setTimeout(function () {
+                if (i % 2==0) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(pic, 153, 47, 18, 18, 83, 70, 18, 18);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(pic, 174, 47, 18, 18, 83, 70, 18, 18);
+                } 
+            },1000 * i + 1);
+        }) (i);
+    }
 }
