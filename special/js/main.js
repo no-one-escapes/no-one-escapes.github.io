@@ -7,6 +7,10 @@ let counter = 0;
 let timeToGrowToChild = 100;
 let hatch = 0;
 let ill = 0;
+let happy = 1;
+let hungry = 1;
+let poop = 0;
+
 
 
 
@@ -80,26 +84,26 @@ function babyAnimation() {
                     eggHatching();
                 } else if (i % 2==0) {
 
-                    if (xBig + 25 > canvas.width || xBig - 20 < 0){
+                    if (xBig + 30 > canvas.width || xBig - 20 < 0 ){
                         moveX = -moveX;
                     }
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(pic, 107, 2, 18, 18, xBig, 70, 18, 18);
                     xBig += moveX;
-                    // console.log(moveX + ' movex')
-                    // console.log(xBig + ' xbig')
-                    counter += 1;
-                    console.log(counter);
+                    console.log(moveX + ' movex')
+                    console.log(xBig + ' xbig')
+                    // counter += 1;
+                    // console.log(counter);
                     
                 } else {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(pic, 104, 25, 24, 10, xSmall, 86, 24, 10);
                     xSmall += moveX;
-                    // console.log(moveX + ' movex2')
-                    // console.log(xSmall + ' xSmall')
-                    counter += 1;
-                    console.log(counter);
-                    console.log(timeToGrowToChild);
+                    console.log(moveX + ' movex2')
+                    console.log(xSmall + ' xSmall')
+                    // counter += 1;
+                    // console.log(counter);
+                    // console.log(timeToGrowToChild);
                     
                 } 
             },1000 * i + 1);
@@ -192,8 +196,8 @@ function chooseButton() {
         ctx.fillRect(50, 30, 6, 6)
     } else if (select == 6 && choose == 1) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "blue";
-        ctx.fillRect(55, 30, 6, 6)
+        ctx.drawImage(pic, 107, 2, 18, 18, 21, 20, 18, 18);
+        ctx.drawImage(pic, 55, 121, 21, 21, 20, 60, 21, 21);
     } else if (select == 7 && choose == 1) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "gray";
@@ -251,9 +255,73 @@ function selectButtonTwo() {
             ctx.drawImage(pic, 256, 56, 45, 42, 60, 30, 45, 42);
             ctx.drawImage(pic, 132, 1, 18, 21, 35, 30, 18, 21);
         }  
-    } else if (select == 6){
-        if (selectTwo == 1){
-
+    } else if (select == 6) {
+        if (selectTwo == 1) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(pic, 5, 46, 93, 45, 50, 27, 93, 45);
+        } else if (selectTwo == 2) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(pic, 8, 94, 72, 24, 20, 22, 72, 24);
+            if (hungry == 0) {
+                ctx.drawImage(pic, 4, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 110, 56, 21, 21);
+            } else if (hungry == 1) {
+                ctx.drawImage(pic, 28, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 110, 56, 21, 21);
+            } else if (hungry == 2) {
+                ctx.drawImage(pic, 28, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 110, 56, 21, 21);
+            } else if (hungry == 3) {
+                ctx.drawImage(pic, 28, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 110, 56, 21, 21);
+            } else if (hungry == 4) {
+                ctx.drawImage(pic, 28, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 110, 56, 21, 21);
+            }
+        } else if (selectTwo == 3) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(pic, 9, 146, 66, 24, 20, 22, 66, 24);
+            if (happy == 0) {
+                ctx.drawImage(pic, 4, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 110, 56, 21, 21);
+            } else if (happy == 1) {
+                ctx.drawImage(pic, 28, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 110, 56, 21, 21);
+            } else if (happy == 2) {
+                ctx.drawImage(pic, 28, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 110, 56, 21, 21);
+            } else if (happy == 3) {
+                ctx.drawImage(pic, 28, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 4, 121, 21, 21, 110, 56, 21, 21);
+            } else if (happy == 4) {
+                ctx.drawImage(pic, 28, 121, 21, 21, 20, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 50, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 80, 56, 21, 21);
+                ctx.drawImage(pic, 28, 121, 21, 21, 110, 56, 21, 21);
+            }
+        } else {
+            selectTwo = 0;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(pic, 107, 2, 18, 18, 21, 20, 18, 18);
+            ctx.drawImage(pic, 55, 121, 21, 21, 20, 60, 21, 21);
         }
     }
 
