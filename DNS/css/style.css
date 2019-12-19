@@ -1036,17 +1036,17 @@ img{
         margin: -5px auto;
     }
     .footer__info {
-        margin: 55px -15px;
+        margin: 55px -15px 0;
         width: 505px;
     }
     .footer__socialmedia-inner {
         display: block;
     }
     .icons-footer {
-        margin: 10px 0px;
+        margin: 10px 0px 0;
     }
     .footer__logo {
-        margin: 25px 15px;
+        margin: 25px 15px 0;
     }
 }
 
@@ -1134,7 +1134,7 @@ img{
     }
     .footer__info {
         display: block;
-        margin: 155px auto;
+        margin: 155px 0 0;
     }
     .footer__info-text {
         width: 200px;
@@ -1251,7 +1251,7 @@ img{
         margin: -40px auto;
     }
     .footer__info{
-        margin: 135px auto;
+        margin: 135px 0 0;
         text-align: center;
     }
     .footer__info-text{
