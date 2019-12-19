@@ -1159,8 +1159,9 @@ img{
     .footer__info {
         width: 300px;
     }
-    .masters__info-inner{
-        width: 270px;
+    .masters__info-inner,
+    .masters__info-inner-text{
+        width: 260px;
     }
     .header {
         min-height: 815px;
@@ -1179,7 +1180,6 @@ img{
     .introducing__item-text-adress, 
     .introducing__item-text-time, 
     .introducing__item,
-    .masters__info-inner-text, 
     .contact__info-inner-text, 
     .footer__info{
         width: 270px;
