@@ -69,7 +69,7 @@ $(document).ready(function () {
                 settings: "unslick"
             },
             {
-                breakpoint: 480,
+                breakpoint: 481,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
