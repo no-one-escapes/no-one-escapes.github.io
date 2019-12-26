@@ -8,6 +8,7 @@
     src: url(../fonts/GoodVibesPro.eot); 
     src: local('Good Vibes Pro'), url(../fonts/GoodVibesPro.ttf);
     src: local('Good Vibes Pro'), url(../fonts/GoodVibesPro.woff);
+    font-display: swap;
    }
 html {
     scroll-behavior: smooth;
@@ -257,6 +258,7 @@ img{
     display: flex !important;
     justify-content: space-between !important;
     width: 1170px;
+    overflow: hidden;
 }
 .masters__info-inner-items{
     width: 500px;
@@ -264,7 +266,7 @@ img{
 }
 .masters__info-photo-card img,
 .top__inner-photo img{
-    width: 520px;
+    width: 500px;
     height: 580px;
     z-index: -1;
     position: relative;
@@ -279,6 +281,9 @@ img{
 }
 .slick-dots li button::before {
     font-size: 50px;
+}
+.slick-dots {
+    margin: 0 -12px;
 }
 .slick-list {
     margin-bottom: 45px;
