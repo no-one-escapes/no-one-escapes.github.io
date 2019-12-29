@@ -145,7 +145,8 @@ a{
 .top__inner-info-mobile{
     display: none;
 }
-.introducing{
+.introducing,
+.advantages{
     background-image: url(../images/bg_2_1.png);
     min-height: 720px;
     background-repeat: no-repeat;
@@ -156,20 +157,37 @@ a{
     z-index: 4;
     position: relative;
 }
-.introducing__inner{
+.study-page__introducing {
+    background-image: url(../images/bg_1_1.png);
+}
+.introducing__inner,
+.advantages__inner{
     display: flex;
     justify-content: space-between;
 }
-.introducing__item{
+.introducing__item,
+.advantages__item{
     width: 550px;
     margin-top: 180px;
     margin-right: 60px;
 }
-.introducing__item-titles{
+.advantages__item {
+    margin-top: 150px;
+}
+.introducing__item-titles,
+.advantages__item-titles{
     height: 180px;
 }
-.introducing__item-suptitle h3, 
+.students {
+    margin-top: -120px;
+    background-image: none;
+    color: #000;
+    min-height: 865px;
+}
+.introducing__item-suptitle h3,
+.advantages__item-suptitle h3, 
 .testimonials__item-suptitle h3,
+.students__item-suptitle h3,
 .blog__item-suptitle h3{
     font-size: 40px;
     font-weight: 400;
@@ -178,7 +196,9 @@ a{
     height: 10px;
 }
 .introducing__item-title h4, 
+.advantages__item-title h4,
 .testimonials__item-title h4,
+.students__item-title h4,
 .blog__item-title h4{
     margin-top: 7px;
     font-size: 40px;
@@ -186,13 +206,14 @@ a{
     text-transform: uppercase;
     line-height: 45px;
 }
-.introducing__item-text{
+.introducing__item-text,
+.advantages__item-text{
     font-size: 17px;
     font-weight: 400;
     line-height: 22px;
     color: #888888;
     margin: -65px auto;
-    width: 550px;
+    width: 545px;
     display: block;
 }
 .header__logo img,
@@ -243,32 +264,45 @@ a{
 .icon-move{
     margin-right: 5px;
 }
-.introducing__item-text-map{
-    margin-right: 45px;
-}
 .masters{
     min-height: 720px;
     margin-top: -120px; 
     position: relative;
 }
-.masters__info-card{
+.masters-page{
+    min-height: 915px;
+    margin-top: 40px;
+}
+.masters__info-card,
+.teacher__info-card{
     display: flex !important;
     justify-content: space-between !important;
     width: 1170px;
     overflow: hidden;
 }
-.masters__info-inner-items{
+.teacher__info-card {
+    width: 1115px;
+}
+.teacher__info-inner-photo img{
+    width: 150px;
+    height: 212px;
+
+}
+.masters__info-inner-items,
+.teacher__info-inner-items{
     width: 500px;
     margin-top: 100px;
 }
 .masters__info-photo-card img,
+.teacher__info-photo-card img,
 .top__inner-photo img{
     width: 500px;
     height: 580px;
     z-index: -1;
     position: relative;
 }
-.masters__info{
+.masters__info,
+.teacher__info{
     display: flex;
     justify-content: space-between;
     margin-top: -225px;
@@ -281,15 +315,20 @@ a{
     font-size: 22px;
     font-weight: 100;
     text-transform: uppercase;
-    line-height: 35px;
+    line-height: 40px;
     transition: 1s ease;
+    display: block;
+    text-align: center;
 }
 .masters__info-btn:hover{
     background-color: #9370DB;
     transition: 1s ease;
     cursor: pointer;
 }
-
+.teacher{
+    min-height: 915px;
+    margin-top: -255px;
+}
 .slick-prev::before, .slick-next::before {
     color:#888888;
 }
@@ -313,7 +352,8 @@ a{
     margin-top: 25px;
     transition: ease 0.5s;
 }
-.masters__info-inner{
+.masters__info-inner,
+.teacher__info-inner{
     width: 1115px;
     min-height: 400px;
     margin-top: 160px;
@@ -324,6 +364,7 @@ a{
 }
 .top__inner-suptitle h1,
 .masters__info-inner-suptitle h3, 
+.teacher__info-inner-suptitle h3,
 .gallery__item-suptitle h3,
 .contact__info-inner-suptitle h3,
 .blog-page__item-suptitle h3,
@@ -350,6 +391,7 @@ a{
 }
 .top__inner-title h4,
 .masters__info-inner-title h4, 
+.teacher__info-inner-title h4,
 .gallery__item-title h4,
 .contact__info-inner-title h4,
 .blog-page__item-title h4,
@@ -392,11 +434,13 @@ a{
     margin-top: -5px;
     position: sticky;
 }
-.testimonial__item-slider{
+.testimonial__item-slider,
+.students__item-slider{
     min-height: 235px;
     width: 915px;
 }
-.testimonials__item{
+.testimonials__item,
+.students__item{
     margin: 104px 85px;
     position: absolute;
     text-align: center;
@@ -408,6 +452,12 @@ a{
     color: #888888;
     margin-top: 20px;
 }
+.students__item-photo,
+.students__item-photo img{
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
 .testimonials__btn{
     width: 290px;
     height: 58px;
@@ -416,17 +466,25 @@ a{
     font-size: 30px;
     font-weight: 100;
     text-transform: uppercase;
-    line-height: 45px;
-    border: 0;
+    line-height: 55px;
     margin: 660px 825px;
     position: absolute;
     border: 2px solid white;
     transition: 1s ease;
+    text-align: center;
 }
 .testimonials__btn:hover{
     background-color: #9370DB;
     transition: 1s ease;
     cursor: pointer;
+}
+.testimonials-page{
+    margin-top: -142px;
+    background-image: none;
+    color:#000;
+}
+.testimonials-page__item-signature a{
+    color: #000000;
 }
 .gallery__inner{
     height: 1000px;
@@ -699,8 +757,11 @@ a{
     }
     .container,
     .masters__info-inner,
+    .teacher__info-inner,
     .testimonials__item-inner,
+    .students__item-inner,
     .testimonial__item-slider,
+    .students__item-slider,
     .blog__items,
     .blog-page__items,
     .blog-page__inner,
@@ -713,22 +774,29 @@ a{
     .top{
         min-height: 600px;
     }
-    .introducing__item-titles {
+    .introducing__item-titles,
+    .advantages__item-titles {
         height: 160px;
     }
     .top__inner-suptitle h1,
-    .masters__info-inner-title h4, 
+    .masters__info-inner-title h4,
+    .teacher__info-inner-title h4, 
     .gallery__item-title h4, 
     .contact__info-inner-title h4, 
     .introducing__item-title h4, 
+    .advantages__item-title h4,
     .testimonials__item-title h4, 
+    .students__item-title h4,
     .blog__item-title h4,
     .blog-page__item-title h4,
     .introducing__item-suptitle h3, 
+    .advantages__item-suptitle h3, 
     .testimonials__item-suptitle h3, 
+    .students__item-suptitle h3,
     .blog__item-suptitle h3,
     .blog-page__item-suptitle h3,
     .masters__info-inner-suptitle h3, 
+    .teacher__info-inner-suptitle h3,
     .gallery__item-suptitle h3, 
     .contact__info-inner-suptitle h3,
     .article-page__item-suptitle h1{
@@ -745,24 +813,32 @@ a{
     }
     .top__inner-info,
     .introducing__item-text,
+    .advantages__item-text,
     .masters__info-inner-items,
+    .teacher__info-inner-items,
     .footer__info-text {
         width: 400px;
     }
-    .introducing__item-text {
+    .introducing__item-text,
+    .advantages__item-text {
         margin: -50px auto;
     }
-    .introducing__item {
+    .introducing__item,
+    .advantages__item {
         margin-top: 118px;
     }
-    .masters__info-inner-items {
+    .masters__info-inner-items{
         margin-top: 35px;
+    }
+    .teacher__info-inner-items {
+        margin-top: 62px;
     }
     .top__inner-photo img{
         margin-top: -2px;
     }
     .top__inner-photo img,
     .masters__info-photo-card img,
+    .teacher__info-photo-card img,
     .contact__items-photo img {
         width: 420px;
         height: 480px;
@@ -772,27 +848,41 @@ a{
         width: 420px;
         margin-top: -95px;
     }
-    .testimonials {
+    .testimonials{
         margin-top: -15px;
         min-height: 650px;
     }
-    .testimonials__item {
+    .students{
+        min-height: 755px;
+    }
+    .testimonials__item,
+    .students__item {
         margin: 78px auto auto 11px;
+    }
+    .teacher__info-card {
+        width: 889px;
+        margin-top: 8px;
+    }
+    .teacher__info-inner-photo img {
+        width: 106px;
+        height: 150px;
     }
     .testimonials__item-text {
         font-size: 38px;
         line-height: 45px;
         width: 840px;
     }
-    .testimonial__item-slider{
+    .testimonial__item-slider,
+    .students__item-slider{
         width: 840px;
         margin: 0 auto;
     }
     .testimonials__btn {
         margin: 547px 590px;
     }
-    .gallery__item-photo {
-        margin-top: 20px;
+    .testimonials-page{
+        min-height: 745px;
+        margin-top: -134px;
     }
     .gallery-page__item-photo {
         margin-top: 63px;
@@ -911,8 +1001,12 @@ a{
 
     .container,
     .masters__info-inner,
+    .teacher__info-inner,
+    .teacher__info-card,
     .testimonials__item-inner,
+    .students__item-inner,
     .testimonial__item-slider,
+    .students__item-slider,
     .blog__items,
     .blog-page__inner,
     .contact__items,
@@ -964,37 +1058,44 @@ a{
         width: 250px;
         margin-top: 27px;
     }
-    .introducing {
+    .introducing,
+    .advantages {
         min-height: 640px;
         margin-top: -160px;
     }
     .introducing__item-text,
+    .advantages__item-text,
     .footer__info-text,
     .introducing__item-text-adress,
     .introducing__item-text-time {
         width: 300px;
         font-size: 14px;
     }
-    .introducing__item-text-map {
-        display: none;
-    }
-    .introducing__item {
+    .introducing__item,
+    .advantages__item {
         margin-top: 145px;
     }
-    .introducing__item-titles {
+    .introducing__item-titles,
+    .advantages__item-titles {
         height: 130px;
     }
     .top__inner-suptitle h1,
     .masters__info-inner-title h4, 
+    .teacher__info-inner-title h4,
     .gallery__item-title h4, 
     .contact__info-inner-title h4, 
     .introducing__item-title h4, 
+    .advantages__item-title h4,
     .testimonials__item-title h4, 
+    .students__item-title h4,
     .blog__item-title h4,
     .introducing__item-suptitle h3, 
+    .advantages__item-suptitle h3, 
     .testimonials__item-suptitle h3, 
+    .students__item-suptitle h3,
     .blog__item-suptitle h3,
     .masters__info-inner-suptitle h3, 
+    .teacher__info-inner-suptitle h3,
     .gallery__item-suptitle h3, 
     .contact__info-inner-suptitle h3,
     .article-page__item-suptitle h1{
@@ -1009,6 +1110,7 @@ a{
     }
     .top__inner-photo img,
     .masters__info-photo-card img, 
+    .teacher__info-photo-card img,
     .contact__items-photo img{
         width: 370px;
         height: 430px;
@@ -1036,7 +1138,8 @@ a{
     .casual-text{
         font-size: 14px;
     }
-    .masters__info-inner-items{
+    .masters__info-inner-items,
+    .teacher__info-inner-items{
         width: 280px;
     }
     .testimonials{
@@ -1048,19 +1151,29 @@ a{
         line-height: 36px;
         width: 600px;
     }
-    .testimonial__item-slider{
+    .testimonial__item-slider,
+    .students__item-slider{
         width: 605px;
     }
-    .testimonials__item {
+    .testimonials__item,
+    .students__item {
         margin: 95px 15px;
+    }
+    .students__item-photo,
+    .students__item-photo img{
+        width: 300px; 
+        height: 300px;
     }
     .testimonials__btn {
         margin: 435px 430px;
-    }
-    .testimonials__btn {
+        line-height: 45px;
         width: 230px;
         height: 50px;
         font-size: 20px;
+    }
+    .testimonials-page {
+        min-height: 710px;
+        margin-top: -119px;
     }
     .blog-page__items{
         width: 665px;
@@ -1133,14 +1246,21 @@ a{
 
     .container,
     .masters__info-inner,
+    .teacher__info-inner,
+    .teacher__info-card,
     .testimonials__item-inner,
+    .students__item-inner,
     .testimonial__item-slider,
+    .students__item-slider,
     .blog__items,
     .blog-page__items,
     .blog-page__inner,
     .contact__items,
     .footer__info{
         width: 550px;
+    }
+    .teacher__info-inner-certificates{
+        width: 500px;
     }
     .navbar {
         margin-top: 35px;
@@ -1189,10 +1309,12 @@ a{
     .top__inner-suptitle h1 {
         height: 1px;
     }
-    .introducing {
+    .introducing,
+    .advantages {
         min-height: 624px;
     }
     .introducing__item-text, 
+    .advantages__item-text,
     .footer__info-text, 
     .introducing__item-text-adress, 
     .introducing__item-text-time {
@@ -1200,17 +1322,23 @@ a{
         font-size: 12px;
     }
     .masters__info-inner-title h4, 
+    .teacher__info-inner-title h4,
     .gallery__item-title h4, 
     .contact__info-inner-title h4, 
     .introducing__item-title h4, 
+    .advantages__item-title h4,
     .testimonials__item-title h4, 
+    .students__item-title h4,
     .blog__item-title h4, 
     .blog-page__item-title h4, 
     .introducing__item-suptitle h3, 
+    .advantages__item-suptitle h3, 
     .testimonials__item-suptitle h3, 
+    .students__item-suptitle h3,
     .blog__item-suptitle h3, 
     .blog-page__item-suptitle h3, 
     .masters__info-inner-suptitle h3, 
+    .teacher__info-inner-suptitle h3,
     .gallery__item-suptitle h3, 
     .contact__info-inner-suptitle h3{
         font-size: 20px;
@@ -1237,17 +1365,21 @@ a{
         text-align: center;
         color: #ffffff;
     }
-    .introducing {
+    .introducing,
+    .advantages {
         margin-top: 110px;
     }
-    .introducing__item {
+    .introducing__item,
+    .advantages__item {
         margin-right: 55px;
         margin-top: 112px;
     }
-    .masters__info {
+    .masters__info,
+    .teacher__info {
         margin-top: -195px;
     }
     .masters__info-photo-card img, 
+    .teacher__info-photo-card img,
     .contact__items-photo img {
         width: 500px;
         height: 580px;
@@ -1258,18 +1390,24 @@ a{
         height: 668px;
         margin-top: 35px;
     }
-    .masters__info-card {
+    .masters__info-card,
+    .teacher__info-card {
         display: block !important;
+    }
+    .teacher{
+        margin-top: -210px;
     }
     .top__inner-info,
     .masters__info-inner-text,
+    .teacher__info-inner-text,
     .contact__info-inner-text{
         width: 500px;
     }
     .testimonials{
         margin-top: 15px;
     }
-    .testimonials__item {
+    .testimonials__item,
+    .students__item {
         margin: 125px 7px;
     }
     .testimonials__item-text{
@@ -1277,11 +1415,24 @@ a{
         line-height: 33px;
         width: 500px;
     }
-    .testimonial__item-slider{
+    .testimonial__item-slider,
+    .students__item-slider{
         width: 505px;
+    }
+    .students {
+        min-height: 410px;
+    }
+    .students__item-photo,
+    .students__item-photo img {
+        width: 250px; 
+        height: 250px;
     }
     .testimonials__btn {
         margin: 450px 295px;
+    }
+    .testimonials-page {
+        min-height: 450px;
+        margin-top: -141px;
     }
     .gallery__item-photo-preview, 
     .gallery__item-photo-preview img {
@@ -1351,14 +1502,21 @@ a{
 
     .container,
     .masters__info-inner,
+    .teacher__info-inner,
+    .teacher__info-card,
     .testimonials__item-inner,
+    .students__item-inner,
     .testimonial__item-slider,
+    .students__item-slider,
     .blog__items,
     .blog-page__items,
     .blog-page__inner,
     .contact__items,
     .footer__info{
         width: 430px;
+    }
+    .teacher__info-inner-certificates{
+        width: 400px;
     }
     .header {
         min-height: 288px;
@@ -1382,29 +1540,40 @@ a{
     .top__inner-suptitle h1 {
         margin-bottom: 130px;
     }
-    .introducing{
+    .introducing,
+    .advantages{
         min-height: 800px;
         border-top: 1px solid white;
         margin-top: 75px;
     }
-    .introducing__inner{
+    .advantages {
+        min-height: 885px;
+    }
+    .introducing__inner,
+    .advantages__inner{
         display: block;
     }
     .introducing__item-text,
+    .advantages__item-text,
     .introducing__item-text-adress, 
     .introducing__item-text-time,
     .introducing__item,
+    .advantages__item,
     .masters__info-inner-text, 
+    .teacher__info-inner-text,
     .contact__info-inner-text,
     .testimonials__item-text,
     .testimonial__item-slider,
+    .students__item-slider,
     .footer__info{
         width: 400px;
     }
-    .introducing__item {
+    .introducing__item,
+    .advantages__item {
         margin-top: 120px;
     }
-    .introducing__item-titles {
+    .introducing__item-titles,
+    .advantages__item-titles {
         height: 110px;
     }
     .introducing-btn{
@@ -1412,29 +1581,47 @@ a{
     }
     .top__inner-photo img,
     .masters__info-photo-card img, 
+    .teacher__info-photo-card img,
     .contact__items-photo img{
-        width: 400px;
+        width: 379px;
         height: 440px;
     }
     .contacts__items-photo img{
         width: 400px;
         height: 534px;
     }
-    .masters__info {
+    .masters__info,
+    .teacher__info {
         margin-top: -160px;
     }
-    .masters__info-inner-items {
+    .masters__info-inner-items,
+    .teacher__info-inner-items {
         margin-top: -24px;
+    }
+    .teacher {
+        margin-top: -165px;
     }
     .testimonials{
         min-height: 570px;
     }
-    .testimonials__item {
+    .students {
+        min-height: 570px;
+    }
+    .testimonials__item,
+    .students__item {
         margin: 125px -1px;
+    }
+    .students__item-photo, 
+    .students__item-photo img {
+        width: 400px;
+        height: 400px;
     }
     .testimonials__btn {
         margin: 497px 200px;
         width: 210px;
+    }
+    .testimonials-page {
+        min-height: 450px;
     }
     .slick-dots {
         margin: 0 -15px;
@@ -1497,7 +1684,10 @@ a{
         margin-top: -40px;
     }
     .masters__info-inner,
-    .masters__info-inner-text
+    .teacher__info-inner,
+    .teacher__info-card,
+    .masters__info-inner-text,
+    .teacher__info-inner-text
     {
         width: 260px;
     }
@@ -1519,18 +1709,25 @@ a{
     .navbar__menu-burger {
         margin: -125px 200px;
     }
-    .introducing {
+    .introducing,
+    .advantages {
         min-height: 970px;
     }
+    .advantages {
+        min-height: 1035px;
+    }
     .introducing__item-text, 
+    .advantages__item-text,
     .introducing__item-text-adress, 
     .introducing__item-text-time, 
     .introducing__item,
+    .advantages__item,
     .contact__info-inner-text, 
     .footer__info{
         width: 270px;
     }
-    .introducing__item-titles {
+    .introducing__item-titles,
+    .advantages__item-titles {
         margin-bottom: 40px;
     }
     .casual-text {
@@ -1540,6 +1737,7 @@ a{
     }
     .top__inner-photo img,
     .masters__info-photo-card img, 
+    .teacher__info-photo-card img,
     .contact__items-photo img {
         width: 260px;
         height: 300px;
@@ -1552,23 +1750,38 @@ a{
         margin: 20px -11px;
         width: 285px;
     }
-    .testimonials {
+    .testimonials{
         margin-top: -25px;
         min-height: 677px;
     }
-    .testimonials__item {
+    .students{
+        min-height: 370px;
+    }
+    .testimonials__item,
+    .students__item {
         margin: 76px 7px;
+    }
+    .students__item-photo, 
+    .students__item-photo img {
+        width: 250px;
+        height: 250px;
     }
     .testimonial__item-slider li button::before {
         font-size: 25px;
     }
     .testimonials__item-inner, 
+    .students__item-inner,
     .testimonial__item-slider,
+    .students__item-slider,
     .testimonials__item-text{
         width: 250px;
     }
     .testimonials__btn {
         margin: 597px 35px;
+    }
+    .testimonials-page {
+        min-height: 573px;
+        margin-top: -83px;
     }
     .gallery__item-photo {
         margin-top: 45px;

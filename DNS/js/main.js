@@ -36,6 +36,49 @@ $(document).ready(function () {
         ]
     });
 
+    $('.students__item-slider').slick({
+        infinite: true,
+        speed: 700,
+        slidesToShow: 2,
+        // autoplay: true,
+        responsive: [
+            {
+                breakpoint: 599,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    $('.teacher__info-inner-certificates').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 950,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 599,
+                settings: {
+                    slidesToShow: 3,
+                }
+            }
+        ]
+      });
+
     $('.masters__info-inner').slick({
         infinite: true,
         dots: true,
@@ -43,6 +86,7 @@ $(document).ready(function () {
         speed: 700,
         slidesToShow: 1,
     });
+
     $('.blog__inner').slick({
         dots: false,
         arrows: true,
