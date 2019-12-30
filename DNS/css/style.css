@@ -366,6 +366,7 @@ a{
 .masters__info-inner-suptitle h3, 
 .teacher__info-inner-suptitle h3,
 .gallery__item-suptitle h3,
+.study-krasnodar__inner-suptitle h3,
 .contact__info-inner-suptitle h3,
 .blog-page__item-suptitle h3,
 .article-page__item-suptitle h1{
@@ -749,6 +750,24 @@ a{
 .slick-next::before {
     content: '►';
 }
+.study-krasnodar{
+    min-height: 1685px;
+}
+.top__inner-info-krd {
+    margin-top: 22px;
+}
+.top__inner-suptitle-krd h1 {
+	height: 26px;
+}
+.top__inner-title-krd {
+    margin-top: -32px;
+}
+.top__inner-title-krd h4 {
+	height: 40px;
+}
+.study-krasnodar__inner-suptitle h3{
+    height: 40px;
+}
 
 
 @media (max-width: 1150px) {
@@ -798,6 +817,7 @@ a{
     .masters__info-inner-suptitle h3, 
     .teacher__info-inner-suptitle h3,
     .gallery__item-suptitle h3, 
+    .study-krasnodar__inner-suptitle h3,
     .contact__info-inner-suptitle h3,
     .article-page__item-suptitle h1{
         font-size: 30px;
@@ -818,6 +838,9 @@ a{
     .teacher__info-inner-items,
     .footer__info-text {
         width: 400px;
+    }
+    .top-study-page{
+        min-height: 785px;
     }
     .introducing__item-text,
     .advantages__item-text {
@@ -854,6 +877,9 @@ a{
     }
     .students{
         min-height: 755px;
+    }
+    .students-study-page {
+        min-height: 860px;
     }
     .testimonials__item,
     .students__item {
@@ -1054,6 +1080,9 @@ a{
     .top {
         min-height: 600px;
     }
+    .top-study-page {
+        min-height: 940px;
+    }
     .top__inner-info{
         width: 250px;
         margin-top: 27px;
@@ -1097,6 +1126,7 @@ a{
     .masters__info-inner-suptitle h3, 
     .teacher__info-inner-suptitle h3,
     .gallery__item-suptitle h3, 
+    .study-krasnodar__inner-suptitle h3,
     .contact__info-inner-suptitle h3,
     .article-page__item-suptitle h1{
         font-size: 24px;
@@ -1309,6 +1339,9 @@ a{
     .top__inner-suptitle h1 {
         height: 1px;
     }
+    .top-study-page__inner-suptitle h1 {
+        height: 30px;
+    }
     .introducing,
     .advantages {
         min-height: 624px;
@@ -1340,6 +1373,7 @@ a{
     .masters__info-inner-suptitle h3, 
     .teacher__info-inner-suptitle h3,
     .gallery__item-suptitle h3, 
+    .study-krasnodar__inner-suptitle h3,
     .contact__info-inner-suptitle h3{
         font-size: 20px;
         line-height: 26px;
@@ -1373,6 +1407,9 @@ a{
     .advantages__item {
         margin-right: 55px;
         margin-top: 112px;
+    }
+    .advantages-study-page__item {
+        margin-top: 95px;
     }
     .masters__info,
     .teacher__info {
@@ -1422,10 +1459,16 @@ a{
     .students {
         min-height: 410px;
     }
+    .students-study-page {
+        min-height: 510px;
+    }
     .students__item-photo,
     .students__item-photo img {
         width: 250px; 
         height: 250px;
+    }
+    .study-krasnodar {
+        min-height: 1620px;
     }
     .testimonials__btn {
         margin: 450px 295px;
@@ -1607,6 +1650,9 @@ a{
     .students {
         min-height: 570px;
     }
+    .students-study-page {
+        min-height: 645px;
+    }
     .testimonials__item,
     .students__item {
         margin: 125px -1px;
@@ -1757,9 +1803,19 @@ a{
     .students{
         min-height: 370px;
     }
+    .students-study-page {
+        min-height: 445px;
+        margin-top: -100px;
+    }
+    .students-study-page__item-suptitle h3{
+        height: 32px;
+    }
     .testimonials__item,
     .students__item {
         margin: 76px 7px;
+    }
+    .students__item-slider {
+        margin: 0 0;
     }
     .students__item-photo, 
     .students__item-photo img {
@@ -1863,6 +1919,13 @@ a{
     }
     .article-page__item-text{
         margin-top: 40px;
+    }
+    .top-study-page__inner-title h4 {
+        line-height: 25px;
+        height: 50px;
+    }
+    .top-study-page__inner-suptitle h1 {
+        height: 10px;
     }
 
 }
