@@ -47,7 +47,7 @@ body{
 }
 
 .btn-danger{
-    mask-image: url(/interface.svg);
+    mask-image: url(../interface.svg);
     background-color: red;
     height: 22px;
     width: 22px;
