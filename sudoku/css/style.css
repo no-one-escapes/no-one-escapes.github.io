@@ -1,1 +1,133 @@
+body {
+    background-color: #000;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 400;
+}
 
+.app1 {
+    text-align: center;
+    display: none;
+}
+
+.app2 {
+    text-align: center;
+    display: none;
+}
+
+.app3 {
+    text-align: center;
+    display: none;
+}
+
+.btns, .btns-two{
+    text-align: center;
+}
+
+.easy, .normal, .hard, .new-game{
+    padding: 5px 20px;
+    border: 1px solid gray;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin: 15px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.new-game{
+    display: none;
+}
+
+button:hover {
+    background-color: gray;
+    transition: .5s ease;
+    border: 1px solid #3c3a35;
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 400;
+    color: #f0f0f0;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 60px;
+}
+.sudoku-game{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #C0C0C0;
+    border: 3px solid #C0C0C0;
+    margin: 60px auto;
+}
+
+.sudoku-segment{
+    border: 1px solid #C0C0C0;
+    margin: 1px;
+    padding: 1px;
+    width: calc(100%/3 - 6px);
+    height: calc(100%/3 - 6px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sudoku-cell{
+    font-family: 'Cairo', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 100%;
+    width: calc(100%/3 - 2px);
+    height: calc(100%/3 - 2px);
+    border: 0;
+    outline: none;
+    padding: 0;
+    margin: 1px;
+    background: #000;
+    cursor: pointer;
+}
+
+.sudoku-cell.start-cell{
+    color: gray;
+    background: #3c3a35;
+}
+
+.sudoku-cell.supported-cell{
+    background: gray;
+}
+
+.sudoku-cell.selected-cell{
+    background: #708090;
+}
+
+.sudoku-cell.important-cell{
+    background-color: #209e52;
+    color: blue;
+}
+
+.sudoku-cell.start-cell.error{
+    color: #fff;
+    background: #d32d00;
+}
+
+.sudoku-cell.error{
+    color: #fff;
+    background: #d32d00;
+}
+
+input {
+    color: transparent !important;
+    text-shadow: 0 0 0 white;
+} 
+
+
+@media (max-width: 480px) {
+    .btns, .btns-two {
+        text-align: center;
+        width: 250px;
+        display: block;
+        margin: 65px auto;
+    }
+}
