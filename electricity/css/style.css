@@ -1,0 +1,33 @@
+div {
+    margin: 90px auto;
+    width: 160px;
+    display: grid;
+}
+
+canvas {
+    margin: 0 auto;
+}
+
+button {
+    margin: 0 auto;
+}
+
+.electricity-on {
+    background-color: #1E90FF;
+    color: white;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    border-radius: 14px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+}
+
+.electricity-off {
+    background-color: #FF4500;
+    color: black;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    border-radius: 14px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+}
